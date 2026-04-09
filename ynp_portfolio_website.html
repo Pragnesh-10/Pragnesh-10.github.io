@@ -4,7 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YNP — Portfolio</title>
+   <title>YNP — Portfolio</title>
+   <meta name="description"
+     content="Portfolio of Yedru Naga Pragnesh, a Computer Science undergraduate focused on data science, machine learning, and software engineering.">
+   <meta name="author" content="Yedru Naga Pragnesh">
+   <meta name="robots" content="index, follow">
+   <meta name="theme-color" content="#060a10">
+   <meta property="og:title" content="YNP Portfolio">
+   <meta property="og:description"
+     content="Projects, skills, certifications, and contact details for Yedru Naga Pragnesh.">
+   <meta property="og:type" content="website">
+   <meta property="og:locale" content="en_US">
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="YNP Portfolio">
+   <meta name="twitter:description"
+     content="Projects, skills, certifications, and contact details for Yedru Naga Pragnesh.">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
@@ -39,7 +55,45 @@
       color: var(--text);
       font-family: var(--sans);
       overflow-x: hidden;
-      cursor: none;
+      cursor: default;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -120px;
+      z-index: 10000;
+      padding: 0.8rem 1rem;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--bg);
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      transition: top 0.2s ease;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent2);
+      outline-offset: 3px;
     }
 
     /* Custom cursor */
@@ -106,6 +160,7 @@
       font-size: 1rem;
       color: var(--accent);
       letter-spacing: 0.1em;
+      text-decoration: none;
     }
 
     .nav-logo span {
@@ -229,7 +284,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      cursor: none;
+      cursor: pointer;
     }
 
     .btn-primary {
@@ -789,10 +844,12 @@
       display: none;
       flex-direction: column;
       gap: 6px;
-      cursor: none;
+      cursor: pointer;
       z-index: 101;
       padding: 10px;
       margin-right: -10px;
+      border: 1px solid transparent;
+      background: transparent;
     }
 
     .menu-toggle .bar {
@@ -879,14 +936,50 @@
         gap: 1rem;
         text-align: center;
       }
+
+      .cursor,
+      .cursor-ring {
+        display: none;
+      }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      body.custom-cursor-enabled,
+      body.custom-cursor-enabled .btn,
+      body.custom-cursor-enabled .menu-toggle {
+        cursor: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .orb,
+      .cursor,
+      .cursor-ring,
+      #particle-canvas {
+        display: none;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- PRELOADER -->
-  <div id="preloader">
+  <div id="preloader" aria-hidden="true">
     <div class="loader-logo">YNP</div>
     <div class="loader-bar">
       <div class="loader-progress" id="loaderProgress"></div>
@@ -894,18 +987,19 @@
   </div>
 
   <!-- PARTICLE CANVAS -->
-  <canvas id="particle-canvas"></canvas>
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
 
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
 
-  <nav>
-    <div class="nav-logo">YNP<span>.dev</span></div>
-    <div class="menu-toggle" id="mobile-menu">
+  <nav aria-label="Primary navigation">
+    <a class="nav-logo" href="#hero" aria-label="Go to top">YNP<span>.dev</span></a>
+    <button class="menu-toggle" id="mobile-menu" type="button" aria-label="Toggle navigation menu" aria-controls="nav-links"
+      aria-expanded="false">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
-    </div>
+    </button>
     <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -915,12 +1009,14 @@
     </ul>
   </nav>
 
+  <main id="main-content">
+
   <!-- HERO -->
   <section id="hero">
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
     <div class="hero-inner">
-      <div class="hero-tag">Available for internships · 2025</div>
+      <div class="hero-tag">Available for internships · 2026</div>
       <h1>
         Yedru Naga<br>
         <span class="name-accent">Pragnesh.</span>
@@ -1066,7 +1162,8 @@
               <span class="tech-pill">Statistics</span>
             </div>
           </div>
-          <a href="https://github.com/Pragnesh-10/analyzing_student_performance.git">View ↗ </a>>
+          <a href="https://github.com/Pragnesh-10/analyzing_student_performance" class="project-link" target="_blank"
+            rel="noopener noreferrer" aria-label="View Student Performance Analyzer source code">View Code ↗</a>
         </div>
       </div>
     </div>
@@ -1080,24 +1177,28 @@
       <br><br>
       <div class="cert-grid">
         <a href="https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_xW4inDfwbzvRc5Qbe_1761645937699_completion_certificate.pdf"
-          target="_blank" class="cert-card" style="text-decoration: none; color: inherit; display: block;">
+          target="_blank" rel="noopener noreferrer" class="cert-card"
+          style="text-decoration: none; color: inherit; display: block;">
           <div class="cert-icon">📊</div>
           <div class="cert-title">Data Analytics Job Simulation</div>
           <div class="cert-org">Deloitte Australia</div>
         </a>
-        <a href="https://www.hackerrank.com/certificates/iframe/fb222f0c4c48" target="_blank" class="cert-card"
+        <a href="https://www.hackerrank.com/certificates/iframe/fb222f0c4c48" target="_blank" rel="noopener noreferrer"
+          class="cert-card"
           style="text-decoration: none; color: inherit; display: block;">
           <div class="cert-icon">🐍</div>
           <div class="cert-title">Python Programming Certification</div>
           <div class="cert-org">Verified Proficiency</div>
         </a>
-        <a href="https://www.hackerrank.com/certificates/iframe/49c15b8adf82" target="_blank" class="cert-card"
+        <a href="https://www.hackerrank.com/certificates/iframe/49c15b8adf82" target="_blank" rel="noopener noreferrer"
+          class="cert-card"
           style="text-decoration: none; color: inherit; display: block;">
           <div class="cert-icon">🧩</div>
           <div class="cert-title">Problem Solving (Basics)</div>
           <div class="cert-org">HackerRank</div>
         </a>
         <a href="https://www.credly.com/badges/e90d27cf-83bd-4690-89be-ab4b0d13dfc7/linked_in_profile" target="_blank"
+          rel="noopener noreferrer"
           class="cert-card" style="text-decoration: none; color: inherit; display: block;">
           <div class="cert-icon">🤖</div>
           <div class="cert-title">Getting Started with Generative AI</div>
@@ -1121,11 +1222,12 @@
               <span class="link-icon">✉</span>
               yedrunagapragnesh@gmail.com
             </a>
-            <a href="https://www.linkedin.com/in/yedrunagapragnesh/" target="_blank" class="contact-link">
+            <a href="https://www.linkedin.com/in/yedrunagapragnesh/" target="_blank" rel="noopener noreferrer"
+              class="contact-link">
               <span class="link-icon">in</span>
               LinkedIn Profile
             </a>
-            <a href="https://github.com/Pragnesh-10" target="_blank" class="contact-link">
+            <a href="https://github.com/Pragnesh-10" target="_blank" rel="noopener noreferrer" class="contact-link">
               <span class="link-icon">⌥</span>
               GitHub Portfolio
             </a>
@@ -1133,31 +1235,52 @@
         </div>
         <form id="contactForm" class="contact-form">
           <div class="form-row">
-            <input id="nameInput" class="form-field" type="text" placeholder="Your name" required>
-            <input id="emailInput" class="form-field" type="email" placeholder="Your email" required>
+            <label for="nameInput" class="sr-only">Your name</label>
+            <input id="nameInput" name="name" class="form-field" type="text" placeholder="Your name" required
+              autocomplete="name">
+            <label for="emailInput" class="sr-only">Your email address</label>
+            <input id="emailInput" name="email" class="form-field" type="email" placeholder="Your email" required
+              autocomplete="email">
           </div>
-          <input id="subjectInput" class="form-field" type="text" placeholder="Subject" required>
-          <textarea id="messageInput" class="form-field" placeholder="Your message..." required></textarea>
+          <label for="subjectInput" class="sr-only">Subject</label>
+          <input id="subjectInput" name="subject" class="form-field" type="text" placeholder="Subject" required>
+          <label for="messageInput" class="sr-only">Message</label>
+          <textarea id="messageInput" name="message" class="form-field" placeholder="Your message..." required></textarea>
           <button type="submit" id="submitBtn" class="btn btn-primary"
-            style="border:none;cursor:none;width:fit-content;">Send Message →</button>
-          <div id="formStatus" style="font-family: var(--mono); font-size: 0.8rem; margin-top: 1rem; display: none;">
+            style="border:none;cursor:pointer;width:fit-content;">Send Message →</button>
+          <div id="formStatus" role="status" aria-live="polite"
+            style="font-family: var(--mono); font-size: 0.8rem; margin-top: 1rem; display: none;">
           </div>
         </form>
       </div>
     </div>
   </section>
 
+  </main>
+
   <footer>
-    <div>© 2025 <span>Yedru Naga Pragnesh</span>. All rights reserved.</div>
+    <div>© <span id="currentYear"></span> <span>Yedru Naga Pragnesh</span>. All rights reserved.</div>
     <div>Built with <span>precision</span> · Amaravati, India</div>
   </footer>
 
   <script>
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     // Preloader
     document.addEventListener("DOMContentLoaded", () => {
       let progress = 0;
       const progressEl = document.getElementById('loaderProgress');
       const preloader = document.getElementById('preloader');
+      const yearEl = document.getElementById('currentYear');
+
+      if (yearEl) {
+        yearEl.textContent = String(new Date().getFullYear());
+      }
+
+      if (prefersReducedMotion) {
+        preloader.style.display = 'none';
+        return;
+      }
 
       const interval = setInterval(() => {
         progress += Math.floor(Math.random() * 20) + 10;
@@ -1180,13 +1303,27 @@
     mobileMenuBtn.addEventListener('click', () => {
       mobileMenuBtn.classList.toggle('active');
       navLinks.classList.toggle('active');
+      const isExpanded = mobileMenuBtn.classList.contains('active');
+      mobileMenuBtn.setAttribute('aria-expanded', String(isExpanded));
+      document.body.style.overflow = isExpanded ? 'hidden' : '';
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenuBtn.classList.remove('active');
         navLinks.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
       });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        mobileMenuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
     });
 
     // Contact Form
@@ -1196,20 +1333,35 @@
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const btn = document.getElementById('submitBtn');
+      const nameInput = document.getElementById('nameInput');
+      const emailInput = document.getElementById('emailInput');
+      const subjectInput = document.getElementById('subjectInput');
+      const messageInput = document.getElementById('messageInput');
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const subject = subjectInput.value.trim();
+      const message = messageInput.value.trim();
+
+      if (!name || !email || !subject || !message) {
+        formStatus.style.display = 'block';
+        formStatus.style.color = '#ff7d7d';
+        formStatus.textContent = 'Please fill all fields before sending.';
+        return;
+      }
+
       btn.textContent = 'Sending...';
       btn.style.opacity = '0.7';
 
-      // Mock submission latency
-      setTimeout(() => {
-        btn.textContent = 'Send Message →';
-        btn.style.opacity = '1';
-        formStatus.style.display = 'block';
-        formStatus.style.color = 'var(--accent)';
-        formStatus.textContent = "Message sent successfully! (Mock)";
-        contactForm.reset();
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+      const mailtoUrl = `mailto:yedrunagapragnesh@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+      window.location.href = mailtoUrl;
 
-        setTimeout(() => { formStatus.style.display = 'none'; }, 5000);
-      }, 1500);
+      btn.textContent = 'Send Message →';
+      btn.style.opacity = '1';
+      formStatus.style.display = 'block';
+      formStatus.style.color = 'var(--accent)';
+      formStatus.textContent = 'Your email app should now open with the message details prefilled.';
     });
 
     // Particle Canvas Background
@@ -1222,7 +1374,10 @@
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     }
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      initParticles();
+    });
     resizeCanvas();
 
     let mouse = { x: null, y: null, radius: 100 };
@@ -1253,7 +1408,7 @@
         let dxMouse = mouse.x - this.x;
         let dyMouse = mouse.y - this.y;
         let distance = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
-        if (distance < mouse.radius) {
+        if (distance > 0 && distance < mouse.radius) {
           const forceDirectionX = dxMouse / distance;
           const forceDirectionY = dyMouse / distance;
           const force = (mouse.radius - distance) / mouse.radius;
@@ -1279,49 +1434,62 @@
     }
 
     function animateParticles() {
+      if (prefersReducedMotion) return;
       requestAnimationFrame(animateParticles);
-      ctx.clearRect(0, 0, innerWidth, innerHeight);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < particlesArray.length; i++) {
         particlesArray[i].update();
       }
     }
 
-    initParticles();
-    animateParticles();
+    if (!prefersReducedMotion) {
+      initParticles();
+      animateParticles();
+    }
 
     // Custom cursor
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursorRing');
     let mx = 0, my = 0, rx = 0, ry = 0;
 
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      cursor.style.left = mx + 'px';
-      cursor.style.top = my + 'px';
-    });
+    const supportsCustomCursor = window.matchMedia('(hover: hover) and (pointer: fine)').matches && !prefersReducedMotion;
 
-    (function animateRing() {
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      ring.style.left = rx + 'px';
-      ring.style.top = ry + 'px';
-      requestAnimationFrame(animateRing);
-    })();
+    if (supportsCustomCursor) {
+      document.body.classList.add('custom-cursor-enabled');
 
-    document.querySelectorAll('a, button, .stat-card, .skill-tag, .project-card, .cert-card').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursor.style.width = '20px';
-        cursor.style.height = '20px';
-        ring.style.width = '52px';
-        ring.style.height = '52px';
+      document.addEventListener('mousemove', e => {
+        mx = e.clientX;
+        my = e.clientY;
+        cursor.style.left = mx + 'px';
+        cursor.style.top = my + 'px';
       });
-      el.addEventListener('mouseleave', () => {
-        cursor.style.width = '12px';
-        cursor.style.height = '12px';
-        ring.style.width = '36px';
-        ring.style.height = '36px';
+
+      (function animateRing() {
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        ring.style.left = rx + 'px';
+        ring.style.top = ry + 'px';
+        requestAnimationFrame(animateRing);
+      })();
+
+      document.querySelectorAll('a, button, .stat-card, .skill-tag, .project-card, .cert-card').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          cursor.style.width = '20px';
+          cursor.style.height = '20px';
+          ring.style.width = '52px';
+          ring.style.height = '52px';
+        });
+        el.addEventListener('mouseleave', () => {
+          cursor.style.width = '12px';
+          cursor.style.height = '12px';
+          ring.style.width = '36px';
+          ring.style.height = '36px';
+        });
       });
-    });
+    } else {
+      cursor.style.display = 'none';
+      ring.style.display = 'none';
+    }
 
     // Typed text effect
     const phrases = [
@@ -1334,6 +1502,11 @@
     const el = document.getElementById('typed');
 
     function type() {
+      if (prefersReducedMotion) {
+        el.textContent = phrases[0];
+        return;
+      }
+
       const current = phrases[pi];
       if (!deleting) {
         el.textContent = current.slice(0, ++ci);
@@ -1357,6 +1530,12 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.skill-group, .project-card, .cert-card, .stat-card').forEach(el => {
+      if (prefersReducedMotion) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        return;
+      }
+
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
