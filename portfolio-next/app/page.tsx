@@ -1,9 +1,9 @@
-import { HeroScrollDemo } from "@/components/hero-scroll-demo";
+import { DemoOne } from "@/components/horizon-hero-demo";
 
 export default function Home() {
   return (
-    <main className="w-full bg-white dark:bg-black">
-      <HeroScrollDemo />
+    <main className="w-full bg-black">
+      <DemoOne />
     </main>
   );
 }
