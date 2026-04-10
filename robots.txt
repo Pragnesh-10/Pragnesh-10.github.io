@@ -1,22 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /private/
 
-# Allow crawling of all important pages
-Allow: /index.html
-Allow: /
-
-# Sitemaps
 Sitemap: https://pragnesh.com/sitemap.xml
-
-# Crawl delays
-Crawl-delay: 1
-Request-rate: 60/1m
-
-# Google-specific
-User-agent: Googlebot
-Allow: /
-
-# Bing-specific
-User-agent: Bingbot
-Allow: /

@@ -9,6 +9,5 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: 'https://ynpragnesh.vercel.app/sitemap.xml',
-    host: 'https://ynpragnesh.vercel.app',
   }
 }
