@@ -16,12 +16,12 @@ export const metadata: Metadata = {
   title: "Yedru Naga Pragnesh - Portfolio",
   description: "Portfolio of Yedru Naga Pragnesh, a Computer Science undergraduate focused on data science, machine learning, and software engineering.",
   keywords: ["portfolio", "data science", "machine learning", "Python", "generative AI", "software engineering"],
-  authors: [{ name: "Yedru Naga Pragnesh", url: "https://pragnesh.com" }],
+  authors: [{ name: "Yedru Naga Pragnesh", url: "https://ynpragnesh.vercel.app" }],
   creator: "Yedru Naga Pragnesh",
   publisher: "Yedru Naga Pragnesh",
   metadataBase: new URL("https://ynpragnesh.vercel.app"),
   alternates: {
-    canonical: "https://ynpragnesh.vercel.app",
+    canonical: "/",
   },
   openGraph: {
     title: "Yedru Naga Pragnesh - Portfolio",
