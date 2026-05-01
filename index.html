@@ -1336,6 +1336,9 @@
             <input id="emailInput" name="email" class="form-field" type="email" placeholder="Your email" required
               autocomplete="email">
           </div>
+          <label for="experienceInput" class="sr-only">Experience</label>
+          <input id="experienceInput" name="experience" class="form-field" type="text"
+            placeholder="Experience (optional)">
           <label for="subjectInput" class="sr-only">Subject</label>
           <input id="subjectInput" name="subject" class="form-field" type="text" placeholder="Subject" required>
           <label for="messageInput" class="sr-only">Message</label>
@@ -1429,11 +1432,13 @@
       const btn = document.getElementById('submitBtn');
       const nameInput = document.getElementById('nameInput');
       const emailInput = document.getElementById('emailInput');
+      const experienceInput = document.getElementById('experienceInput');
       const subjectInput = document.getElementById('subjectInput');
       const messageInput = document.getElementById('messageInput');
 
       const name = nameInput.value.trim();
       const email = emailInput.value.trim();
+      const experience = experienceInput.value.trim();
       const subject = subjectInput.value.trim();
       const message = messageInput.value.trim();
 
@@ -1452,6 +1457,9 @@
         const formData = new FormData();
         formData.append('name', name);
         formData.append('email', email);
+        if (experience) {
+          formData.append('experience', experience);
+        }
         formData.append('subject', subject);
         formData.append('message', message);
 
