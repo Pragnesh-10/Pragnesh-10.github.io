@@ -630,6 +630,60 @@
       color: var(--text);
     }
 
+    /* ACTIVITIES */
+    #activities {
+      background: linear-gradient(180deg, #0a0e18 0%, #0c1220 100%);
+    }
+
+    .activities-container {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .activity-card {
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent2);
+      padding: 2rem;
+      background: var(--card);
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .activity-card:hover {
+      border-color: var(--accent2);
+      box-shadow: 0 0 20px rgba(0, 201, 255, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .activity-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent2);
+      margin-bottom: 0.3rem;
+    }
+
+    .activity-role {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .activity-period {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .activity-description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
     /* PROJECTS */
     .project-grid {
       display: grid;
@@ -1121,6 +1175,7 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#activities">Activities</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#certs">Certs</a></li>
@@ -1216,10 +1271,29 @@
     </div>
   </section>
 
+  <!-- ACTIVITIES -->
+  <section id="activities">
+    <div class="section-inner">
+      <div class="section-label">03 · Activities</div>
+      <h2>Beyond the Classroom.</h2>
+      <br><br>
+      <div class="activities-container">
+        <div class="activity-card">
+          <div class="activity-title">Apple Swift Student Challenge</div>
+          <div class="activity-role">Participant</div>
+          <div class="activity-period">2026</div>
+          <div class="activity-description">
+            Participated in Apple's Swift Student Challenge, showcasing iOS app development skills and creative problem-solving through Swift programming.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SKILLS -->
   <section id="skills">
     <div class="section-inner">
-      <div class="section-label">03 · Skills</div>
+      <div class="section-label">04 · Skills</div>
       <h2>My Toolkit.</h2>
       <br><br>
       <div class="skills-grid">
@@ -1282,7 +1356,7 @@
   <!-- PROJECTS -->
   <section id="projects">
     <div class="section-inner">
-      <div class="section-label">03 · Projects</div>
+      <div class="section-label">05 · Projects</div>
       <h2>What I've Built.</h2>
       <br><br>
       <div class="project-grid">
@@ -1345,7 +1419,7 @@
   <!-- CERTIFICATIONS -->
   <section id="certs">
     <div class="section-inner">
-      <div class="section-label">05 · Certifications</div>
+      <div class="section-label">06 · Certifications</div>
       <h2>Credentials.</h2>
       <br><br>
       <div class="cert-grid">
@@ -1384,7 +1458,7 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="section-inner">
-      <div class="section-label">05 · Contact</div>
+      <div class="section-label">07 · Contact</div>
       <div class="contact-inner">
         <div class="contact-text">
           <h2>Let's work<br>together.</h2>
