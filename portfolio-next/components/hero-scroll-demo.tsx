@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { SocialIcons } from "@/components/ui/social-icons";
 import Image from "next/image";
 
 export function HeroScrollDemo() {
@@ -27,6 +28,17 @@ export function HeroScrollDemo() {
           draggable={false}
         />
       </ContainerScroll>
+      <div className="mt-8 flex flex-col items-center gap-4 px-4 text-center">
+        <div>
+          <p className="text-sm font-medium uppercase tracking-[0.3em] text-neutral-500">
+            Connect
+          </p>
+          <p className="mt-2 text-sm text-neutral-400">
+            Follow along on the platforms below.
+          </p>
+        </div>
+        <SocialIcons />
+      </div>
     </div>
   );
 }
