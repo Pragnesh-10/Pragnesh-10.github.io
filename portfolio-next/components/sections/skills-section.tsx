@@ -36,7 +36,7 @@ export function SkillsSection() {
           {skillGroups.map((group, idx) => (
             <div key={idx} className="border border-emerald-400 border-opacity-30 bg-slate-800 bg-opacity-50 p-6 rounded-lg hover:border-emerald-400 hover:border-opacity-100 transition-all">
               <h3 className="text-sm font-mono tracking-[0.15em] text-emerald-400 uppercase mb-4 flex items-center gap-2">
-                <span>//</span> {group.title}
+                <span>{"//"}</span> {group.title}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {group.skills.map((skill, idx) => (

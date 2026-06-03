@@ -5,8 +5,11 @@ import * as THREE from 'three';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './horizon-hero-section.css';
+// @ts-expect-error - external three module
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
+// @ts-expect-error - external three module
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
+// @ts-expect-error - external three module
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -20,14 +23,26 @@ export const HorizonHeroSection = () => {
   const menuRef = useRef(null);
 
   const smoothCameraPos = useRef({ x: 0, y: 30, z: 100 });
-  const cameraVelocity = useRef({ x: 0, y: 0, z: 0 });
   
   const [scrollProgress, setScrollProgress] = useState(0);
   const [currentSection, setCurrentSection] = useState(1);
   const [isReady, setIsReady] = useState(false);
   const totalSections = 2;
   
-  const threeRefs = useRef({
+  const threeRefs = useRef<{
+    scene: THREE.Scene | null;
+    camera: THREE.PerspectiveCamera | null;
+    renderer: THREE.WebGLRenderer | null;
+    composer: EffectComposer | null;
+    stars: THREE.Points[];
+    nebula: THREE.Mesh | null;
+    mountains: THREE.Mesh[];
+    animationId: number | null;
+    targetCameraX?: number;
+    targetCameraY?: number;
+    targetCameraZ?: number;
+    locations?: number[];
+  }>({
     scene: null,
     camera: null,
     renderer: null,
@@ -57,9 +72,8 @@ export const HorizonHeroSection = () => {
       refs.camera.position.z = 100;
       refs.camera.position.y = 20;
 
-      // Renderer
       refs.renderer = new THREE.WebGLRenderer({
-        canvas: canvasRef.current,
+        canvas: canvasRef.current || undefined,
         antialias: true,
         alpha: true
       });
@@ -93,6 +107,15 @@ export const HorizonHeroSection = () => {
       
       // Mark as ready after Three.js is initialized
       setIsReady(true);
+    };
+
+    const getLocation = () => {
+      const { current: refs } = threeRefs;
+      const locations: number[] = [];
+      refs.mountains.forEach( (mountain, i) => {
+        locations[i] = mountain.position.z;
+      });
+      refs.locations = locations;
     };
 
     const createStarField = () => {
@@ -179,7 +202,7 @@ export const HorizonHeroSection = () => {
         });
 
         const stars = new THREE.Points(geometry, material);
-        refs.scene.add(stars);
+        if (refs.scene) refs.scene.add(stars);
         refs.stars.push(stars);
       }
     };
@@ -238,7 +261,7 @@ export const HorizonHeroSection = () => {
       const nebula = new THREE.Mesh(geometry, material);
       nebula.position.z = -1050;
       nebula.rotation.x = 0;
-      refs.scene.add(nebula);
+      if (refs.scene) refs.scene.add(nebula);
       refs.nebula = nebula;
     };
 
@@ -280,7 +303,7 @@ export const HorizonHeroSection = () => {
         mountain.position.z = layer.distance;
         mountain.position.y = layer.distance
         mountain.userData = { baseZ: layer.distance, index };
-        refs.scene.add(mountain);
+        if (refs.scene) refs.scene.add(mountain);
         refs.mountains.push(mountain);
       });
     };
@@ -324,7 +347,7 @@ export const HorizonHeroSection = () => {
       });
 
       const atmosphere = new THREE.Mesh(geometry, material);
-      refs.scene.add(atmosphere);
+      if (refs.scene) refs.scene.add(atmosphere);
     };
 
     const animate = () => {
@@ -334,24 +357,28 @@ export const HorizonHeroSection = () => {
       const time = Date.now() * 0.001;
 
       // Update stars
-      refs.stars.forEach((starField, i) => {
-        if (starField.material.uniforms) {
-          starField.material.uniforms.time.value = time;
+      refs.stars.forEach((starField) => {
+        const material = starField.material as THREE.ShaderMaterial;
+        if (material.uniforms) {
+          material.uniforms.time.value = time;
         }
       });
 
       // Update nebula
-      if (refs.nebula && refs.nebula.material.uniforms) {
-        refs.nebula.material.uniforms.time.value = time * 0.5;
+      if (refs.nebula) {
+        const nebulaMaterial = refs.nebula.material as THREE.ShaderMaterial;
+        if (nebulaMaterial.uniforms) {
+          nebulaMaterial.uniforms.time.value = time * 0.5;
+        }
       }
 
       // Smooth camera movement with easing
       if (refs.camera && refs.targetCameraX !== undefined) {
         const smoothingFactor = 0.05;
         
-        smoothCameraPos.current.x += (refs.targetCameraX - smoothCameraPos.current.x) * smoothingFactor;
-        smoothCameraPos.current.y += (refs.targetCameraY - smoothCameraPos.current.y) * smoothingFactor;
-        smoothCameraPos.current.z += (refs.targetCameraZ - smoothCameraPos.current.z) * smoothingFactor;
+        smoothCameraPos.current.x += ((refs.targetCameraX ?? 0) - smoothCameraPos.current.x) * smoothingFactor;
+        smoothCameraPos.current.y += ((refs.targetCameraY ?? 0) - smoothCameraPos.current.y) * smoothingFactor;
+        smoothCameraPos.current.z += ((refs.targetCameraZ ?? 0) - smoothCameraPos.current.z) * smoothingFactor;
         
         const floatX = Math.sin(time * 0.1) * 2;
         const floatY = Math.cos(time * 0.15) * 1;
@@ -399,17 +426,29 @@ export const HorizonHeroSection = () => {
 
       refs.stars.forEach(starField => {
         starField.geometry.dispose();
-        starField.material.dispose();
+        if (Array.isArray(starField.material)) {
+          starField.material.forEach(m => m.dispose());
+        } else {
+          starField.material.dispose();
+        }
       });
 
       refs.mountains.forEach(mountain => {
         mountain.geometry.dispose();
-        mountain.material.dispose();
+        if (Array.isArray(mountain.material)) {
+          mountain.material.forEach(m => m.dispose());
+        } else {
+          mountain.material.dispose();
+        }
       });
 
       if (refs.nebula) {
         refs.nebula.geometry.dispose();
-        refs.nebula.material.dispose();
+        if (Array.isArray(refs.nebula.material)) {
+          refs.nebula.material.forEach(m => m.dispose());
+        } else {
+          refs.nebula.material.dispose();
+        }
       }
 
       if (refs.renderer) {
@@ -417,15 +456,6 @@ export const HorizonHeroSection = () => {
       }
     };
   }, []);
-
-  const getLocation = () => {
-    const { current: refs } = threeRefs;
-    const locations = [];
-    refs.mountains.forEach( (mountain, i) => {
-      locations[i] = mountain.position.z
-    })
-    refs.locations = locations
-  }
 
   useEffect(() => {
     if (!isReady) return;
@@ -446,7 +476,7 @@ export const HorizonHeroSection = () => {
     }
 
     if (titleRef.current) {
-      const titleChars = titleRef.current.querySelectorAll('.title-char');
+      const titleChars = (titleRef.current as HTMLElement).querySelectorAll('.title-char');
       tl.from(titleChars, {
         y: 200,
         opacity: 0,
@@ -457,7 +487,7 @@ export const HorizonHeroSection = () => {
     }
 
     if (subtitleRef.current) {
-      const subtitleLines = subtitleRef.current.querySelectorAll('.subtitle-line');
+      const subtitleLines = (subtitleRef.current as HTMLElement).querySelectorAll('.subtitle-line');
       tl.from(subtitleLines, {
         y: 50,
         opacity: 0,
@@ -514,18 +544,21 @@ export const HorizonHeroSection = () => {
       refs.mountains.forEach((mountain, i) => {
         const speed = 1 + i * 0.9;
         const targetZ = mountain.userData.baseZ + scrollY * speed * 0.5;
-        refs.nebula.position.z = (targetZ + progress * speed * 0.01) - 100
+        if (refs.nebula) {
+          refs.nebula.position.z = (targetZ + progress * speed * 0.01) - 100;
+        }
         
         mountain.userData.targetZ = targetZ;
-        const location = mountain.position.z
         if (progress > 0.7) {
           mountain.position.z = 600000;
         }
-        if (progress < 0.7) {
-          mountain.position.z = refs.locations[i]
+        if (progress < 0.7 && refs.locations) {
+          mountain.position.z = refs.locations[i];
         }
       });
-      refs.nebula.position.z = refs.mountains[3].position.z
+      if (refs.nebula && refs.mountains[3]) {
+        refs.nebula.position.z = refs.mountains[3].position.z;
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -533,14 +566,6 @@ export const HorizonHeroSection = () => {
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, [totalSections]);
-
-  const splitTitle = (text) => {
-    return text.split('').map((char, i) => (
-      <span key={i} className="title-char">
-        {char}
-      </span>
-    ));
-  };
 
   return (
     <div ref={containerRef} className="hero-container cosmos-style">
@@ -637,13 +662,13 @@ export const HorizonHeroSection = () => {
 
       <div className="scroll-sections">
        {[...Array(2)].map((_, i) => {
-          const titles = {
+          const titles: Record<number, string> = {
             0: 'ABOUT ME',
             1: 'MY JOURNEY',
             2: 'INNOVATION'
           };
           
-          const subtitles = {
+          const subtitles: Record<number, { line1: string; line2: string; }> = {
             0: {
               line1: 'Data meets curiosity',
               line2: 'Building solutions with Python, ML & Generative AI'

@@ -74,7 +74,7 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's work<br />together.</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let&apos;s work<br />together.</h2>
             <p className="text-gray-400 mb-8 leading-relaxed">
               Actively seeking internship opportunities in Machine Learning, Data Science, and Software Engineering. Open to collaborations, projects, and conversations.
             </p>
