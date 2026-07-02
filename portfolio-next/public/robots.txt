@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://ynpragnesh.vercel.app/sitemap.xml
