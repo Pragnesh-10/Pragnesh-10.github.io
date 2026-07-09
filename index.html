@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-  
     <script>
       (function (c, l, a, r, i, t, y) {
         c[a] =
@@ -52,7 +51,7 @@
     <!-- Site Verifications -->
     <meta name="google-site-verification" content="GcRE-dOpVKkNqstPtyjQpWrg7nXYVdwm_OKrMlRHI2s" />
     <meta name="msvalidate.01" content="7378B208599E4177F3E37D61BA5CD16C" />
-    <meta name="theme-color" content="#060a10" />
+    <meta name="theme-color" content="#030305" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -77,12 +76,10 @@
       content="Portfolio of Yedru Naga Pragnesh, a Computer Science undergraduate focused on Data Science, AI & Machine Learning, and Product Management."
     />
     <meta name="twitter:image" content="https://ynpragnesh.pages.dev/FullSizeRender.jpg"/>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 
     <!-- JSON-LD Structured Data for Google Search -->
@@ -114,917 +111,312 @@
         ]
       }
     </script>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "url": "https://ynpragnesh.pages.dev",
-        "name": "Yedru Naga Pragnesh - Portfolio",
-        "description": "Portfolio of Yedru Naga Pragnesh, a Computer Science undergraduate focused on Data Science, AI & Machine Learning, Product Management.",
-        "author": {
-          "@type": "Person",
-          "name": "Yedru Naga Pragnesh"
-        }
-      }
-    </script>
   </head>
 
   <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <!-- Background Effects -->
+    <div class="bg-mesh"></div>
+    <div class="noise-overlay"></div>
 
-    <!-- PRELOADER -->
-    <div id="preloader" aria-hidden="true">
-      <div class="loader-logo">Y Naga Pragnesh</div>
-      <div class="loader-bar">
-        <div class="loader-progress" id="loaderProgress"></div>
-      </div>
-    </div>
-
-    <!-- PARTICLE CANVAS -->
-    <canvas id="particle-canvas" aria-hidden="true"></canvas>
-
-    <div class="cursor" id="cursor" aria-hidden="true"></div>
-    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
 
     <nav aria-label="Primary navigation">
-      <a class="nav-logo" href="#hero" aria-label="Go to top"
-        >Y Naga Pragnesh<span>.dev</span></a
-      >
-      <button
-        class="menu-toggle"
-        id="mobile-menu"
-        type="button"
-        aria-label="Toggle navigation menu"
-        aria-controls="nav-links"
-        aria-expanded="false"
-      >
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+      <a class="nav-logo" href="#hero">
+        YNPragnesh<span class="text-accent">.</span>
+      </a>
+      <button class="menu-toggle" id="mobile-menu" aria-label="Toggle menu">
+        <div class="hamburger"></div>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#activities">Activities</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certs">Certs</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about" class="nav-item">About</a></li>
+        <li><a href="#experience" class="nav-item">Experience</a></li>
+        <li><a href="#projects" class="nav-item">Projects</a></li>
+        <li><a href="#skills" class="nav-item">Skills</a></li>
+        <li><a href="#contact" class="nav-item btn-contact">Let's Talk</a></li>
       </ul>
     </nav>
 
     <main id="main-content">
-      <!-- HERO -->
-      <section id="hero">
-        <div class="orb orb1"></div>
-        <div class="orb orb2"></div>
-        <div class="hero-inner">
-          <div class="hero-tag">Available for internships · 2026</div>
-          <h1>
-            Yedru Naga<br />
-            <span class="name-accent">Pragnesh.</span>
+      <!-- HERO SECTION -->
+      <section id="hero" class="reveal">
+        <div class="hero-content">
+          <div class="badge fade-in-up">
+            <span class="pulse-dot"></span> Available for internships 2026
+          </div>
+          <h1 class="hero-title fade-in-up delay-1">
+            Transforming Data into <br />
+            <span class="gradient-text">Intelligent Solutions.</span>
           </h1>
-          <p class="hero-subtitle">
-            <span id="typed" class="typed-text"></span
-            ><span class="cursor-blink">_</span><br />
-            CSE Undergrad · SRM University, Amaravati · Building with data &amp;
-            code.
+          <p class="hero-subtitle fade-in-up delay-2">
+            I'm <span class="text-white font-medium">Yedru Naga Pragnesh</span>, a CSE Undergrad at SRM University blending <br /> Data Science, AI, and Product Management to build impactful software.
           </p>
-          <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary">↓ View Projects</a>
-            <a href="#contact" class="btn btn-outline">Get in Touch →</a>
+          <div class="hero-actions fade-in-up delay-3">
+            <a href="#projects" class="btn btn-primary">Explore Work <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+            <a href="#contact" class="btn btn-secondary">Get in touch</a>
+          </div>
+        </div>
+        
+        <div class="hero-visuals">
+          <div class="glass-card floating-card card-1">
+            <div class="stat-value">3+</div>
+            <div class="stat-label">Projects Built</div>
+          </div>
+          <div class="glass-card floating-card card-2">
+            <div class="stat-value">5+</div>
+            <div class="stat-label">Certifications</div>
           </div>
         </div>
       </section>
 
-      <!-- ABOUT -->
-      <section id="about">
-        <div class="section-inner">
-          <div class="section-label">01 · About</div>
-          <div class="about-grid">
-            <div class="about-text">
-              <h2>Data meets<br />curiosity.</h2>
-              <p>
-                Python was supposed to be a programming language. Somehow, it became my personality.
-I'm a Computer Science undergraduate interested in <strong>Data Science, AI & Machine Learning and Product Management</strong>. I enjoy <strong>building Products</strong>, solving problems, and finding stories hidden in data. 
+      <!-- ABOUT SECTION -->
+      <section id="about" class="section reveal">
+        <div class="container">
+          <h2 class="section-title">About Me<span class="text-accent">.</span></h2>
+          
+          <div class="bento-grid">
+            <div class="bento-item glass-card span-2 highlight-card">
+              <h3 class="bento-title">Data meets curiosity</h3>
+              <p class="bento-text">
+                Python was supposed to be a programming language. Somehow, it became my personality. 
+                I'm interested in <strong>Data Science, AI & Machine Learning and Product Management</strong>. I enjoy building products, solving problems, and finding stories hidden in data.
               </p>
-              <p>
-                Proficient in the <strong>Python ecosystem</strong> — NumPy,
-                Pandas, Matplotlib — I combine analytical thinking with clean
-                code practices to solve real-world problems.
+              <p class="bento-text">
+                Proficient in the <strong>Python ecosystem</strong> — NumPy, Pandas, Matplotlib — I combine analytical thinking with clean code practices to solve real-world problems.
               </p>
-              <p>
-                Passionate about <strong>Generative AI</strong> and emerging
-                technologies, I'm actively building projects and seeking
-                internship opportunities to grow alongside innovative teams.
-              </p>
-              <div class="edu-card">
-                <div class="edu-school">SRM University, AP</div>
-                <div class="edu-degree">B.Tech · Computer Science</div>
-                <div class="edu-period">
-                  August 2025 – May 2029 · Amaravati, India
-                </div>
-              </div>
             </div>
-            <div class="about-stats">
-              <div class="stat-card">
-                <div class="stat-num">3+</div>
-                <div class="stat-label">Projects Built</div>
+            
+            <div class="bento-item glass-card center-content">
+              <div class="icon-wrap">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
               </div>
-              <div class="stat-card">
-                <div class="stat-num">5+</div>
-                <div class="stat-label">Certifications</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-num">3+</div>
-                <div class="stat-label">Tech Domains</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-num">∞</div>
-                <div class="stat-label">Learning Velocity</div>
+              <h3 class="bento-title text-center">Learning Velocity</h3>
+              <div class="huge-text gradient-text">∞</div>
+            </div>
+
+            <div class="bento-item glass-card span-1">
+              <h3 class="bento-title">Education</h3>
+              <div class="edu-details">
+                <h4 class="edu-school">SRM University, AP</h4>
+                <p class="edu-degree">B.Tech · Computer Science</p>
+                <p class="edu-date">August 2025 – May 2029</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- EXPERIENCE -->
-      <section id="experience">
-        <div class="section-inner">
-          <div class="section-label">02 · Experience</div>
-          <h2>My Journey.</h2>
-          <br /><br />
-          <div class="experience-container">
-            <div class="experience-card">
-              <div class="experience-title">Research Intern</div>
-              <div class="experience-company">
-                Forest Ecology Lab - SRM University, Amaravati
-              </div>
-              <div class="experience-period">March 31, 2026 – Present</div>
-              <div class="experience-description">
-                Research Intern, Forest Ecology Lab, conducting data cleaning, preprocessing, and analysis of large environmental datasets. Performed statistical and correlation analyses of vegetation indices (NDVI/EVI) and ecological variables to derive insights into forest dynamics, productivity, and conservation.
-              </div>
+      <!-- EXPERIENCE SECTION -->
+      <section id="experience" class="section reveal">
+        <div class="container">
+          <h2 class="section-title">Experience<span class="text-accent">.</span></h2>
+          
+          <div class="timeline">
+            <div class="timeline-item glass-card hover-glow">
+              <div class="timeline-date">March 2026 – Present</div>
+              <h3 class="timeline-role">Research Intern</h3>
+              <h4 class="timeline-company">Forest Ecology Lab - SRM University</h4>
+              <p class="timeline-desc">Conducting data cleaning, preprocessing, and analysis of large environmental datasets. Performed statistical and correlation analyses of vegetation indices (NDVI/EVI) and ecological variables to derive insights into forest dynamics, productivity, and conservation.</p>
             </div>
-            <div class="experience-card">
-              <div class="experience-title">Member</div>
-              <div class="experience-company">
-                Singularity Student Lab - SRM University, Amaravati
-              </div>
-              <div class="experience-period">April 30, 2026 – Present</div>
-              <div class="experience-description">
-                Collaborating on cutting-edge projects at the intersection of AI
-                and emerging technologies, building innovative solutions.
-              </div>
-            </div>
-            <div class="experience-card">
-              <div class="experience-title">Web Management and Development</div>
-              <div class="experience-company">
-                Microsoft Student Community - SRM University, Amaravati
-              </div>
-              <div class="experience-period">May 6, 2026 – Present</div>
-              <div class="experience-description">
-                Working on website management, frontend development, content
-                updates, and improving the digital presence of the community
-                through collaborative technical projects and event support.
-              </div>
-            </div>
-          </div>
-         </div>
-        </div>
-      </section>
 
-      <!-- ACTIVITIES -->
-      <section id="activities">
-        <div class="section-inner">
-          <div class="section-label">03 · Activities</div>
-          <h2>Beyond the Classroom.</h2>
-          <br /><br />
-          <div class="activities-container">
-            <div class="activity-card">
-              <div class="activity-title">Apple Swift Student Challenge</div>
-              <div class="activity-role">Participant</div>
-              <div class="activity-period">2026</div>
-              <div class="activity-description">
-                Participated in Apple's Swift Student Challenge, showcasing iOS
-                app development skills and creative problem-solving through
-                Swift programming.
-              </div>
+            <div class="timeline-item glass-card hover-glow">
+              <div class="timeline-date">May 2026 – Present</div>
+              <h3 class="timeline-role">Web Management and Development</h3>
+              <h4 class="timeline-company">Microsoft Student Community - SRM</h4>
+              <p class="timeline-desc">Working on website management, frontend development, content updates, and improving the digital presence of the community through collaborative technical projects and event support.</p>
+            </div>
+            
+            <div class="timeline-item glass-card hover-glow">
+              <div class="timeline-date">April 2026 – Present</div>
+              <h3 class="timeline-role">Member</h3>
+              <h4 class="timeline-company">Singularity Student Lab</h4>
+              <p class="timeline-desc">Collaborating on cutting-edge projects at the intersection of AI and emerging technologies, building innovative solutions.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SKILLS -->
-      <section id="skills">
-        <div class="section-inner">
-          <div class="section-label">04 · Skills</div>
-          <h2>My Toolkit.</h2>
-          <br /><br />
-          <div class="skills-grid">
-            <div class="skill-group">
-              <div class="skill-group-title">Languages</div>
-              <div class="skill-tags">
-                <span class="skill-tag">Python (Advanced)</span>
-                <span class="skill-tag">Swift (Intermediate)</span>
-              </div>
-            </div>
-            <div class="skill-group">
-              <div class="skill-group-title">Data Science & ML</div>
-              <div class="skill-tags">
-                <span class="skill-tag">NumPy</span>
-                <span class="skill-tag">Pandas</span>
-                <span class="skill-tag">Matplotlib</span>
-                <span class="skill-tag">Seaborn</span>
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">EDA</span>
-              </div>
-            </div>
-            <div class="skill-group">
-              <div class="skill-group-title">Core CS</div>
-              <div class="skill-tags">
-                <span class="skill-tag">OOP</span>
-                <span class="skill-tag">Problem Solving</span>
-                <span class="skill-tag">Algorithms</span>
-                <span class="skill-tag">Data Structures</span>
-              </div>
-            </div>
-            <div class="skill-group">
-              <div class="skill-group-title">Dev Tools</div>
-              <div class="skill-tags">
-                <span class="skill-tag">Git</span>
-                <span class="skill-tag">GitHub</span>
-                <span class="skill-tag">Jupyter</span>
-                <span class="skill-tag">VS Code</span>
-              </div>
-            </div>
-            <div class="skill-group">
-              <div class="skill-group-title">Emerging Tech</div>
-              <div class="skill-tags">
-                <span class="skill-tag">Generative AI</span>
-                <span class="skill-tag">Prompt Engineering</span>
-                <span class="skill-tag">LLMs</span>
-              </div>
-            </div>
-            <div class="skill-group">
-              <div class="skill-group-title">Professional</div>
-              <div class="skill-tags">
-                <span class="skill-tag">Data Storytelling</span>
-                <span class="skill-tag">Tech Documentation</span>
-                <span class="skill-tag">Clean Code</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section id="projects">
-        <div class="section-inner">
-          <div class="section-label">05 · Projects</div>
-          <h2>What I've Built.</h2>
-          <br /><br />
-          <div class="project-grid">
-            <div class="project-card">
-              <div>
-                <div class="project-type">Minor Project · Data Analysis</div>
-                <div class="project-name">Student Performance Analyzer</div>
-                <p class="project-desc">
-                  A comprehensive data analysis tool that examines student
-                  performance metrics across multiple dimensions. Built a full
-                  preprocessing pipeline to clean, transform, and validate
-                  datasets — handling missing values and outliers. Used
-                  statistical analysis and interactive visualizations to surface
-                  key trends and demographic correlations.
-                </p>
-                <div class="project-tech">
-                  <span class="tech-pill">Python</span>
-                  <span class="tech-pill">Pandas</span>
-                  <span class="tech-pill">Matplotlib</span>
-                  <span class="tech-pill">EDA</span>
-                  <span class="tech-pill">Statistics</span>
-                </div>
-              </div>
-              <a
-                href="https://github.com/Pragnesh-10/analyzing_student_performance"
-                class="project-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View Student Performance Analyzer source code"
-                >View Code ↗</a
-              >
-            </div>
-          </div>
-          <br /><br />
-          <div class="project-grid">
-            <div class="project-card">
-              <div>
-                <div class="project-type">Web Development</div>
-                <div class="project-name">
-                  SkillGPS - AI powered career guidance platform
-                </div>
-                <p class="project-desc">
-                  It is a smart platform that helps users identify, track, and
-                  improve their skills with clear direction. It acts like a
-                  navigation system for personal and professional growth. The
-                  platform analyzes user interests, current abilities, and
-                  goals. It then recommends relevant skills, learning paths, and
-                  resources. Users get a structured roadmap instead of random
-                  content.
-                  <details>
-                    <summary>Key Features</summary>
-                    <p>
-                      <li>Skill assessment to understand strengths and gaps</li>
-                      <li>Personalized learning paths based on goals</li>
-                      <li>Resource recommendations for each skill</li>
-                      <li>Progress tracking with measurable milestones</li>
-                      <li>Simple dashboard to monitor growth</li>
-                    </p>
-                  </details>
-                </p>
-                <div class="project-tech">
-                  <span class="tech-pill">HTML</span>
-                  <span class="tech-pill">CSS</span>
-                  <span class="tech-pill">JavaScript</span>
-                  <span class="tech-pill">React</span>
-                  <span class="tech-pill">Node.js</span>
-                </div>
-              </div>
-              <a
-                href="https://skillgps.vercel.app"
-                class="project-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View SkillGPS source code"
-                >View Website ↗</a
-              >
-            </div>
-          </div>
-          <div class="project-grid">
-            <div class="project-card">
-              <div>
-                <div class="project-type">IOS App Development</div>
-                <div class="project-name">CampusExplorer</div>
-                <p class="project-desc">
-                  Developed a campus-based social navigation app that allows
-                  users to connect with friends and track their real-time
-                  locations Enabled users to view where friends are currently
-                  located and explore places they have visited within the campus
-                  Implemented location-sharing features to improve coordination
-                  and meetups among users Designed intuitive UI for viewing
-                  friend activity and movement history Currently building an
-                  in-app messaging system to support direct communication
-                  between users Structured backend to manage user connections,
-                  location data, and activity tracking efficiently
-                </p>
-                <div class="project-tech">
-                  <span class="tech-pill">Swift</span>
-                  <span class="tech-pill">UIKit</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CERTIFICATIONS -->
-      <section id="certs">
-        <div class="section-inner">
-          <div class="section-label">06 · Certifications</div>
-          <h2>Credentials.</h2>
-          <br /><br />
-          <div class="cert-grid">
-            <a
-              href="https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_xW4inDfwbzvRc5Qbe_1761645937699_completion_certificate.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="cert-card"
-              style="text-decoration: none; color: inherit; display: block"
-            >
-              <div class="cert-icon"></div>
-              <div class="cert-title">Data Analytics Job Simulation</div>
-              <div class="cert-org">Deloitte Australia</div>
-            </a>
-            <a
-              href="https://www.hackerrank.com/certificates/iframe/fb222f0c4c48"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="cert-card"
-              style="text-decoration: none; color: inherit; display: block"
-            >
-              <div class="cert-icon"></div>
-              <div class="cert-title">Python Programming Certification</div>
-              <div class="cert-org">Verified Proficiency</div>
-            </a>
-                        <a
-              href="https://www.hackerrank.com/certificates/iframe/55738ae71379"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="cert-card"
-              style="text-decoration: none; color: inherit; display: block"
-            >
-              <div class="cert-icon"></div>
-              <div class="cert-title">SQL(BASICS) Certification</div>
-              <div class="cert-org">Verified Proficiency</div>
-            </a>
-            <a
-              href="https://www.hackerrank.com/certificates/iframe/49c15b8adf82"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="cert-card"
-              style="text-decoration: none; color: inherit; display: block"
-            >
-              <div class="cert-icon"></div>
-              <div class="cert-title">Problem Solving (Basics)</div>
-              <div class="cert-org">HackerRank</div>
-            </a>
-            <a
-              href="https://www.credly.com/badges/e90d27cf-83bd-4690-89be-ab4b0d13dfc7/linked_in_profile"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="cert-card"
-              style="text-decoration: none; color: inherit; display: block"
-            >
-              <div class="cert-icon"></div>
-              <div class="cert-title">Getting Started with Generative AI</div>
-              <div class="cert-org">AI Fundamentals</div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact">
-        <div class="section-inner">
-          <div class="section-label">07 · Contact</div>
-          <div class="contact-inner">
-            <div class="contact-text">
-              <h2>Let's work<br />together.</h2>
-              <p>
-                Actively seeking internship opportunities in AI & Machine Learning,
-                Data Science, and Product Manager. Open to collaborations,
-                projects, and conversations.
-              </p>
-              <div class="contact-links">
-                <a
-                  href="mailto:yedrunagapragnesh@gmail.com"
-                  class="contact-link"
-                >
-                  <span class="link-icon">✉</span>
-                  yedrunagapragnesh@gmail.com
+      <!-- PROJECTS SECTION -->
+      <section id="projects" class="section reveal">
+        <div class="container">
+          <h2 class="section-title">Selected Work<span class="text-accent">.</span></h2>
+          
+          <div class="projects-grid">
+            <div class="project-card glass-card hover-lift">
+              <div class="project-header">
+                <span class="project-category">Data Analysis</span>
+                <a href="https://github.com/Pragnesh-10/analyzing_student_performance" target="_blank" class="project-link-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                 </a>
-                <a
-                  href="https://www.linkedin.com/in/yedrunagapragnesh/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="contact-link"
-                >
-                  <span class="link-icon">in</span>
-                  LinkedIn Profile
+              </div>
+              <h3 class="project-title">Student Performance Analyzer</h3>
+              <p class="project-description">A comprehensive data analysis tool that examines student performance metrics. Built a full preprocessing pipeline to clean, transform, and validate datasets.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">Matplotlib</span>
+                <span class="tech-tag">EDA</span>
+              </div>
+            </div>
+
+            <div class="project-card glass-card hover-lift">
+              <div class="project-header">
+                <span class="project-category">Web Development</span>
+                <a href="https://skillgps.vercel.app" target="_blank" class="project-link-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                 </a>
-                <a
-                  href="https://github.com/Pragnesh-10"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="contact-link"
-                >
-                  <span class="link-icon">⌥</span>
-                  GitHub Portfolio
+              </div>
+              <h3 class="project-title">SkillGPS</h3>
+              <p class="project-description">An AI-powered career guidance platform that helps users identify, track, and improve their skills with personalized learning paths based on goals.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">CSS</span>
+              </div>
+            </div>
+
+            <div class="project-card glass-card hover-lift">
+              <div class="project-header">
+                <span class="project-category">iOS Development</span>
+              </div>
+              <h3 class="project-title">CampusExplorer</h3>
+              <p class="project-description">A campus-based social navigation app allowing users to connect and track real-time locations, exploring places friends visited with an intuitive UI.</p>
+              <div class="tech-stack">
+                <span class="tech-tag">Swift</span>
+                <span class="tech-tag">UIKit</span>
+                <span class="tech-tag">Location Services</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS & CERTS SECTION -->
+      <section id="skills" class="section reveal">
+        <div class="container split-section">
+          <div class="skills-column">
+            <h2 class="section-title">My Toolkit<span class="text-accent">.</span></h2>
+            
+            <div class="skill-group glass-card">
+              <h3 class="skill-title">Data Science & ML</h3>
+              <div class="skill-tags">
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">NumPy</span>
+                <span class="skill-pill">Pandas</span>
+                <span class="skill-pill">Matplotlib</span>
+                <span class="skill-pill">Seaborn</span>
+                <span class="skill-pill">SQL</span>
+                <span class="skill-pill">EDA</span>
+              </div>
+            </div>
+
+            <div class="skill-group glass-card">
+              <h3 class="skill-title">Emerging Tech & Web</h3>
+              <div class="skill-tags">
+                <span class="skill-pill">Generative AI</span>
+                <span class="skill-pill">LLMs</span>
+                <span class="skill-pill">Prompt Engineering</span>
+                <span class="skill-pill">JavaScript</span>
+                <span class="skill-pill">HTML/CSS</span>
+                <span class="skill-pill">Swift</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="certs-column">
+            <h2 class="section-title">Certifications<span class="text-accent">.</span></h2>
+            <div class="cert-list">
+              <a href="#" class="cert-item glass-card hover-glow">
+                <div class="cert-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div class="cert-info">
+                  <h4 class="cert-name">Data Analytics Job Simulation</h4>
+                  <p class="cert-issuer">Deloitte Australia</p>
+                </div>
+              </a>
+              <a href="#" class="cert-item glass-card hover-glow">
+                <div class="cert-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div class="cert-info">
+                  <h4 class="cert-name">Generative AI Fundamentals</h4>
+                  <p class="cert-issuer">Credly</p>
+                </div>
+              </a>
+              <a href="#" class="cert-item glass-card hover-glow">
+                <div class="cert-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div class="cert-info">
+                  <h4 class="cert-name">Python & SQL Certifications</h4>
+                  <p class="cert-issuer">HackerRank</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="section reveal">
+        <div class="container">
+          <div class="contact-box glass-card glow-border">
+            <div class="contact-info">
+              <h2 class="contact-title">Let's build something <span class="gradient-text">amazing.</span></h2>
+              <p class="contact-desc">Actively seeking internship opportunities in AI & Machine Learning, Data Science, and Product Management. Open to collaborations.</p>
+              
+              <div class="social-links">
+                <a href="mailto:yedrunagapragnesh@gmail.com" class="social-link glass-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/yedrunagapragnesh/" target="_blank" class="social-link glass-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> LinkedIn
+                </a>
+                <a href="https://github.com/Pragnesh-10" target="_blank" class="social-link glass-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> GitHub
                 </a>
               </div>
             </div>
+            
             <form id="contactForm" class="contact-form">
-              <div class="form-row">
-                <label for="nameInput" class="sr-only">Your name</label>
-                <input
-                  id="nameInput"
-                  name="name"
-                  class="form-field"
-                  type="text"
-                  placeholder="Your name"
-                  required
-                  autocomplete="name"
-                />
-                <label for="emailInput" class="sr-only"
-                  >Your email address</label
-                >
-                <input
-                  id="emailInput"
-                  name="email"
-                  class="form-field"
-                  type="email"
-                  placeholder="Your email"
-                  required
-                  autocomplete="email"
-                />
+              <div class="input-group">
+                <input type="text" id="nameInput" name="name" required placeholder="Name" class="glass-input">
               </div>
-              <label for="experienceInput" class="sr-only">Experience</label>
-              <input
-                id="experienceInput"
-                name="experience"
-                class="form-field"
-                type="text"
-                placeholder="Experience (optional)"
-              />
-              <label for="subjectInput" class="sr-only">Subject</label>
-              <input
-                id="subjectInput"
-                name="subject"
-                class="form-field"
-                type="text"
-                placeholder="Subject"
-                required
-              />
-              <label for="messageInput" class="sr-only">Message</label>
-              <textarea
-                id="messageInput"
-                name="message"
-                class="form-field"
-                placeholder="Your message..."
-                required
-              ></textarea>
-              <button
-                type="submit"
-                id="submitBtn"
-                class="btn btn-primary"
-                style="border: none; cursor: pointer; width: fit-content"
-              >
-                Send Message →
-              </button>
-              <div
-                id="formStatus"
-                role="status"
-                aria-live="polite"
-                style="
-                  font-family: var(--mono);
-                  font-size: 0.8rem;
-                  margin-top: 1rem;
-                  display: none;
-                "
-              ></div>
+              <div class="input-group">
+                <input type="email" id="emailInput" name="email" required placeholder="Email Address" class="glass-input">
+              </div>
+              <div class="input-group">
+                <textarea id="messageInput" name="message" required placeholder="Your message..." class="glass-input" rows="4"></textarea>
+              </div>
+              <button type="submit" id="submitBtn" class="btn btn-primary w-full">Send Message</button>
+              <div id="formStatus" class="form-status"></div>
             </form>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div>
-        © <span id="currentYear"></span> <span>Yedru Naga Pragnesh</span>. All
-        rights reserved.
+    <footer class="footer">
+      <div class="container footer-content">
+        <p class="copyright">© <span id="currentYear"></span> Yedru Naga Pragnesh. Built with precision.</p>
+        <p class="location">Amaravati, India 🇮🇳</p>
       </div>
-      <div>Built with <span>precision</span> ·India 🇮🇳</div>
     </footer>
 
-    <script>
-      const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
+    <!-- Success Modal -->
+    <div id="successModal" class="modal-overlay">
+      <div class="modal-content glass-card">
+        <div class="modal-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <h3>Message Sent!</h3>
+        <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+        <button id="closeModalBtn" class="btn btn-primary w-full">Awesome</button>
+      </div>
+    </div>
 
-      // Preloader
-      document.addEventListener("DOMContentLoaded", () => {
-        let progress = 0;
-        const progressEl = document.getElementById("loaderProgress");
-        const preloader = document.getElementById("preloader");
-        const yearEl = document.getElementById("currentYear");
-
-        if (yearEl) {
-          yearEl.textContent = String(new Date().getFullYear());
-        }
-
-        if (prefersReducedMotion) {
-          preloader.style.display = "none";
-          return;
-        }
-
-        const interval = setInterval(() => {
-          progress += Math.floor(Math.random() * 20) + 10;
-          if (progress >= 100) {
-            progress = 100;
-            clearInterval(interval);
-            setTimeout(() => {
-              preloader.style.opacity = "0";
-              preloader.style.visibility = "hidden";
-            }, 300);
-          }
-          progressEl.style.width = progress + "%";
-        }, 100);
-      });
-
-      // Mobile Menu
-      const mobileMenuBtn = document.getElementById("mobile-menu");
-      const navLinks = document.getElementById("nav-links");
-
-      mobileMenuBtn.addEventListener("click", () => {
-        mobileMenuBtn.classList.toggle("active");
-        navLinks.classList.toggle("active");
-        const isExpanded = mobileMenuBtn.classList.contains("active");
-        mobileMenuBtn.setAttribute("aria-expanded", String(isExpanded));
-        document.body.style.overflow = isExpanded ? "hidden" : "";
-      });
-
-      navLinks.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenuBtn.classList.remove("active");
-          navLinks.classList.remove("active");
-          mobileMenuBtn.setAttribute("aria-expanded", "false");
-          document.body.style.overflow = "";
-        });
-      });
-
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-          mobileMenuBtn.classList.remove("active");
-          navLinks.classList.remove("active");
-          mobileMenuBtn.setAttribute("aria-expanded", "false");
-          document.body.style.overflow = "";
-        }
-      });
-
-      // Contact Form
-      const contactForm = document.getElementById("contactForm");
-      const formStatus = document.getElementById("formStatus");
-
-      contactForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const btn = document.getElementById("submitBtn");
-        const nameInput = document.getElementById("nameInput");
-        const emailInput = document.getElementById("emailInput");
-        const experienceInput = document.getElementById("experienceInput");
-        const subjectInput = document.getElementById("subjectInput");
-        const messageInput = document.getElementById("messageInput");
-
-        const name = nameInput.value.trim();
-        const email = emailInput.value.trim();
-        const experience = experienceInput.value.trim();
-        const subject = subjectInput.value.trim();
-        const message = messageInput.value.trim();
-
-        if (!name || !email || !subject || !message) {
-          formStatus.style.display = "block";
-          formStatus.style.color = "#ff7d7d";
-          formStatus.textContent = "Please fill all fields before sending.";
-          return;
-        }
-
-        btn.textContent = "Sending...";
-        btn.style.opacity = "0.7";
-        btn.disabled = true;
-
-        try {
-          const payload = {
-            name: name,
-            email: email,
-            subject: subject,
-            message: message,
-          };
-
-          if (experience) {
-            payload.experience = experience;
-          }
-
-          const response = await fetch("https://formspree.io/f/mnjoyrpe", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(payload),
-          });
-
-          if (response.ok) {
-            formStatus.style.display = "block";
-            formStatus.style.color = "var(--accent)";
-            formStatus.textContent =
-              "Message sent successfully! I'll get back to you soon.";
-            contactForm.reset();
-          } else {
-            formStatus.style.display = "block";
-            formStatus.style.color = "#ff7d7d";
-            formStatus.textContent = "Error sending message. Please try again.";
-          }
-        } catch (error) {
-          console.error("Form submission error:", error);
-          formStatus.style.display = "block";
-          formStatus.style.color = "#ff7d7d";
-          formStatus.textContent = "Error sending message. Please try again.";
-        } finally {
-          btn.textContent = "Send Message →";
-          btn.style.opacity = "1";
-          btn.disabled = false;
-          setTimeout(() => {
-            formStatus.style.display = "none";
-          }, 5000);
-        }
-      });
-
-      // Particle Canvas Background
-      const canvas = document.getElementById("particle-canvas");
-      const ctx = canvas.getContext("2d");
-
-      let particlesArray;
-
-      function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-      window.addEventListener("resize", () => {
-        resizeCanvas();
-        initParticles();
-      });
-      resizeCanvas();
-
-      let mouse = { x: null, y: null, radius: 100 };
-      window.addEventListener("mousemove", (event) => {
-        mouse.x = event.x;
-        mouse.y = event.y;
-      });
-
-      class Particle {
-        constructor(x, y, dx, dy, size, color) {
-          this.x = x;
-          this.y = y;
-          this.dx = dx;
-          this.dy = dy;
-          this.size = size;
-          this.color = color;
-          this.baseX = this.x;
-          this.baseY = this.y;
-        }
-        draw() {
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-          ctx.fillStyle = this.color;
-          ctx.fill();
-        }
-        update() {
-          if (this.x > canvas.width || this.x < 0) this.dx = -this.dx;
-          if (this.y > canvas.height || this.y < 0) this.dy = -this.dy;
-          this.x += this.dx;
-          this.y += this.dy;
-
-          // Mouse interaction
-          let dxMouse = mouse.x - this.x;
-          let dyMouse = mouse.y - this.y;
-          let distance = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
-          if (distance > 0 && distance < mouse.radius) {
-            const forceDirectionX = dxMouse / distance;
-            const forceDirectionY = dyMouse / distance;
-            const force = (mouse.radius - distance) / mouse.radius;
-            this.x -= forceDirectionX * force * 5;
-            this.y -= forceDirectionY * force * 5;
-          }
-          this.draw();
-        }
-      }
-
-      function initParticles() {
-        particlesArray = [];
-        let numberOfParticles = (canvas.width * canvas.height) / 10000;
-        for (let i = 0; i < numberOfParticles; i++) {
-          let size = Math.random() * 2 + 0.5;
-          let x = Math.random() * (innerWidth - size * 2 - size * 2) + size * 2;
-          let y =
-            Math.random() * (innerHeight - size * 2 - size * 2) + size * 2;
-          let dx = (Math.random() - 0.5) * 0.5;
-          let dy = (Math.random() - 0.5) * 0.5;
-          let color = "rgba(0, 245, 160, 0.2)";
-          particlesArray.push(new Particle(x, y, dx, dy, size, color));
-        }
-      }
-
-      function animateParticles() {
-        if (prefersReducedMotion) return;
-        requestAnimationFrame(animateParticles);
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i < particlesArray.length; i++) {
-          particlesArray[i].update();
-        }
-      }
-
-      if (!prefersReducedMotion) {
-        initParticles();
-        animateParticles();
-      }
-
-      // Custom cursor
-      const cursor = document.getElementById("cursor");
-      const ring = document.getElementById("cursorRing");
-      let mx = 0,
-        my = 0,
-        rx = 0,
-        ry = 0;
-
-      const supportsCustomCursor =
-        window.matchMedia("(hover: hover) and (pointer: fine)").matches &&
-        !prefersReducedMotion;
-
-      if (supportsCustomCursor) {
-        document.body.classList.add("custom-cursor-enabled");
-
-        document.addEventListener("mousemove", (e) => {
-          mx = e.clientX;
-          my = e.clientY;
-          cursor.style.left = mx + "px";
-          cursor.style.top = my + "px";
-        });
-
-        (function animateRing() {
-          rx += (mx - rx) * 0.12;
-          ry += (my - ry) * 0.12;
-          ring.style.left = rx + "px";
-          ring.style.top = ry + "px";
-          requestAnimationFrame(animateRing);
-        })();
-
-        document
-          .querySelectorAll(
-            "a, button, .stat-card, .skill-tag, .project-card, .cert-card",
-          )
-          .forEach((el) => {
-            el.addEventListener("mouseenter", () => {
-              cursor.style.width = "20px";
-              cursor.style.height = "20px";
-              ring.style.width = "52px";
-              ring.style.height = "52px";
-            });
-            el.addEventListener("mouseleave", () => {
-              cursor.style.width = "12px";
-              cursor.style.height = "12px";
-              ring.style.width = "36px";
-              ring.style.height = "36px";
-            });
-          });
-      } else {
-        cursor.style.display = "none";
-        ring.style.display = "none";
-      }
-
-      // Typed text effect
-      const phrases = [
-        "Data Scientist in the making",
-        "AI & Machine Learning Enthusiast",
-        "Product Manager Wannabe",
-        "Generative AI Explorer",
-      ];
-      let pi = 0,
-        ci = 0,
-        deleting = false;
-      const el = document.getElementById("typed");
-
-      function type() {
-        if (prefersReducedMotion) {
-          el.textContent = phrases[0];
-          return;
-        }
-
-        const current = phrases[pi];
-        if (!deleting) {
-          el.textContent = current.slice(0, ++ci);
-          if (ci === current.length) {
-            deleting = true;
-            setTimeout(type, 1800);
-            return;
-          }
-        } else {
-          el.textContent = current.slice(0, --ci);
-          if (ci === 0) {
-            deleting = false;
-            pi = (pi + 1) % phrases.length;
-            setTimeout(type, 300);
-            return;
-          }
-        }
-        setTimeout(type, deleting ? 40 : 80);
-      }
-      type();
-
-      // Scroll reveal
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.style.opacity = "1";
-              e.target.style.transform = "translateY(0)";
-            }
-          });
-        },
-        { threshold: 0.1 },
-      );
-
-      document
-        .querySelectorAll(".skill-group, .project-card, .cert-card, .stat-card")
-        .forEach((el) => {
-          if (prefersReducedMotion) {
-            el.style.opacity = "1";
-            el.style.transform = "none";
-            return;
-          }
-
-          el.style.opacity = "0";
-          el.style.transform = "translateY(20px)";
-          el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-          observer.observe(el);
-        });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
