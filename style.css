@@ -1036,6 +1036,37 @@ footer span {
   }
 }
 
+@media (max-width: 480px) {
+  nav {
+    padding: 1rem;
+  }
+
+  .section-inner {
+    padding: 3rem 1rem;
+  }
+
+  #hero {
+    padding: 0 1rem;
+  }
+
+  .project-card,
+  .experience-card,
+  .activity-card,
+  .cert-card,
+  .skill-group {
+    padding: 1.5rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 @media (hover: hover) and (pointer: fine) {
   body.custom-cursor-enabled,
   body.custom-cursor-enabled .btn,
