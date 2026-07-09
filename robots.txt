@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ynpragnesh.vercel.app/sitemap.xml
+Sitemap: https://ynpragnesh.pages.dev/sitemap.xml

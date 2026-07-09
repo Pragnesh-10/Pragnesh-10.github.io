@@ -3,8 +3,8 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
   <url>
-    <loc>https://ynpragnesh.vercel.app/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <loc>https://ynpragnesh.pages.dev/</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
