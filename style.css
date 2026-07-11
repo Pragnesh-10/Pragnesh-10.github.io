@@ -428,6 +428,13 @@ nav.scrolled {
 .span-2 { grid-column: span 2; }
 .span-1 { grid-column: span 1; }
 
+.learning-velocity-card {
+  position: absolute;
+  top: 50px;
+  left: -200px;
+  animation-delay: -1.5s;
+}
+
 .bento-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
