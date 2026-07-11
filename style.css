@@ -430,7 +430,7 @@ nav.scrolled {
 
 .learning-velocity-card {
   position: absolute;
-  top: 50px;
+  top: 250px;
   left: -200px;
   animation-delay: -1.5s;
 }
