@@ -21,7 +21,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />
     <link rel="apple-touch-icon" href="1775926024808.jpeg" />
-    
+
     <!-- Primary Meta Tags -->
     <title>Y Naga Pragnesh | Portfolio</title>
     <meta name="title" content="Y Naga Pragnesh | Portfolio" />
@@ -33,12 +33,12 @@
     <meta name="author" content="Yedru Naga Pragnesh" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://ynpragnesh.pages.dev/" />
-    
+
     <!-- Site Verifications -->
     <meta name="google-site-verification" content="GcRE-dOpVKkNqstPtyjQpWrg7nXYVdwm_OKrMlRHI2s" />
     <meta name="msvalidate.01" content="7378B208599E4177F3E37D61BA5CD16C" />
-    <meta name="theme-color" content="#030305" />
-    
+    <meta name="theme-color" content="#faf9f5" />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ynpragnesh.pages.dev/" />
@@ -51,7 +51,7 @@
     <meta property="og:image:alt" content="Y Naga Pragnesh Portfolio" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Y Naga Pragnesh Portfolio" />
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content="ynpragnesh.pages.dev" />
@@ -62,10 +62,13 @@
       content="Portfolio of Yedru Naga Pragnesh, a Computer Science undergraduate focused on Data Science, AI & Machine Learning, and Product Management. Member at Singularity Lab and Microsoft Student Community."
     />
     <meta name="twitter:image" content="https://ynpragnesh.pages.dev/FullSizeRender.jpg"/>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
 
     <!-- JSON-LD Structured Data for Google Search -->
@@ -107,296 +110,519 @@
   </head>
 
   <body>
-    <!-- Background Effects -->
-    <div class="bg-mesh"></div>
-    <div class="noise-overlay"></div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="nav-logo" href="#hero">Y Naga Pragnesh<span class="accent">.</span></a>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a class="nav-cta" href="#contact">Let's Talk</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="read-progress" aria-hidden="true"></div>
+    </header>
 
-    <nav aria-label="Primary navigation">
-      <a class="nav-logo" href="#hero">
-        Y Naga Pragnesh<span class="text-accent">.</span>
-      </a>
-      <button class="menu-toggle" id="mobile-menu" aria-label="Toggle menu">
-        <div class="hamburger"></div>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about" class="nav-item">About</a></li>
-        <li><a href="#experience" class="nav-item">Experience</a></li>
-        <li><a href="#projects" class="nav-item">Projects</a></li>
-        <li><a href="#skills" class="nav-item">Skills</a></li>
-        <li><a href="#contact" class="nav-item btn-contact">Let's Talk</a></li>
+    <nav class="section-nav" aria-label="Section navigation">
+      <ul>
+        <li><a href="#about"><span class="idx">01</span>About</a></li>
+        <li><a href="#experience"><span class="idx">02</span>Experience</a></li>
+        <li><a href="#projects"><span class="idx">03</span>Projects</a></li>
+        <li><a href="#skills"><span class="idx">04</span>Toolkit</a></li>
+        <li><a href="#contact"><span class="idx">05</span>Contact</a></li>
       </ul>
     </nav>
 
     <main id="main-content">
-      <!-- HERO SECTION -->
-      <section id="hero" class="reveal">
-        <div class="hero-content">
-          <div class="badge fade-in-up">
-            <span class="pulse-dot"></span> Available for internships 2026
-          </div>
-          <div style="position: relative; display: inline-block;">
-            <h1 class="hero-title fade-in-up delay-1">
-              Transforming Data into <br />
-              <span class="gradient-text">Intelligent Solutions.</span>
-            </h1>
-          </div>
-          <p class="hero-subtitle fade-in-up delay-2">
-            I'm <span class="text-white font-medium">Yedru Naga Pragnesh</span>, a CSE Undergrad at SRM University blending <br /> Data Science, AI, and Product Management to build impactful software.
-          </p>
-          <div class="hero-actions fade-in-up delay-3">
-            <a href="#projects" class="btn btn-primary">Explore Work <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
-            <a href="#contact" class="btn btn-secondary">Get in touch</a>
-          </div>
-        </div>
-        
-        <div class="hero-visuals">
-          <div class="glass-card floating-card card-1">
-            <div class="stat-value">3+</div>
-            <div class="stat-label">Projects Built</div>
-          </div>
-          <div class="glass-card floating-card card-2">
-            <div class="stat-value">5+</div>
-            <div class="stat-label">Certifications</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ABOUT SECTION -->
-      <section id="about" class="section reveal">
+      <!-- HERO -->
+      <section id="hero" class="hero">
         <div class="container">
-          <h2 class="section-title">About Me<span class="text-accent">.</span></h2>
-          
-          <div class="bento-grid">
-            <div class="bento-item glass-card span-2 highlight-card">
-              <h3 class="bento-title">Data meets curiosity</h3>
-              <p class="bento-text">
-                Python was supposed to be a programming language. Somehow, it became my personality. 
-                I'm interested in <strong>Data Science, AI & Machine Learning and Product Management</strong>. I enjoy building products, solving problems, and finding stories hidden in data.
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow fade-up">
+                <span class="pulse-dot"></span> Available for internships 2026
               </p>
-              <p class="bento-text">
-                Proficient in the <strong>Python ecosystem</strong> — NumPy, Pandas, Matplotlib — I combine analytical thinking with clean code practices to solve real-world problems.
-              </p>
-            </div>
 
-            <div class="bento-item glass-card span-1">
-              <h3 class="bento-title">Education</h3>
-              <div class="edu-details">
-                
-                <h4 class="edu-school">SRM University, AP</h4>
-                <p class="edu-degree">B.Tech · Computer Science</p>
-                <p class="edu-date">August 2025 – May 2029</p>
+              <h1 class="hero-title fade-up d1">
+                Transforming data into <em>intelligent solutions.</em>
+              </h1>
+
+              <p class="hero-lede fade-up d2">
+                I'm <strong>Yedru Naga Pragnesh</strong>, a CSE undergraduate at SRM
+                University blending data science, AI and product management to build
+                impactful software.
+              </p>
+
+              <div class="hero-actions fade-up d3">
+                <a href="#projects" class="btn btn-primary">
+                  Explore work
+                  <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+                <a href="#contact" class="btn btn-ghost">Get in touch</a>
               </div>
             </div>
+
+            <figure class="portrait fade-up d4">
+              <img
+                src="1775926024808.jpeg"
+                alt="Portrait of Yedru Naga Pragnesh"
+                width="400"
+                height="400"
+                fetchpriority="high"
+              />
+              <figcaption>
+                <span>Y. Naga Pragnesh</span>
+                <span>Amaravati, IN</span>
+              </figcaption>
+            </figure>
+          </div>
+
+          <ul class="hero-stats fade-up d5">
+            <li>
+              <span class="stat-num">3+</span>
+              <span class="stat-label">Projects built</span>
+            </li>
+            <li>
+              <span class="stat-num">5+</span>
+              <span class="stat-label">Certifications</span>
+            </li>
+            <li>
+              <span class="stat-num">2025–29</span>
+              <span class="stat-label">B.Tech, Computer Science</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section">
+        <div class="container">
+          <header class="section-head reveal">
+            <span class="section-index">01 — About</span>
+            <h2 class="section-title">Curiosity, meet data<span class="accent">.</span></h2>
+          </header>
+
+          <div class="about-grid">
+            <div class="prose reveal">
+              <p class="lede">
+                Python was supposed to be a programming language. Somehow, it became my
+                personality.
+              </p>
+              <p>
+                I'm interested in <strong>Data Science, AI &amp; Machine Learning and
+                Product Management</strong>. I enjoy building products, solving problems,
+                and finding stories hidden in data.
+              </p>
+              <p>
+                Proficient in the <strong>Python ecosystem</strong> — NumPy, Pandas,
+                Matplotlib — I combine analytical thinking with clean code practices to
+                solve real-world problems.
+              </p>
+            </div>
+
+            <aside class="about-aside reveal">
+              <h3 class="aside-label">Education</h3>
+              <p class="edu-school">SRM University, AP</p>
+              <p class="edu-degree">B.Tech · Computer Science</p>
+              <p class="edu-date">August 2025 – May 2029</p>
+
+              <hr />
+
+              <h3 class="aside-label">Focus</h3>
+              <ul class="focus-list">
+                <li>Data Science</li>
+                <li>AI &amp; Machine Learning</li>
+                <li>Product Management</li>
+              </ul>
+            </aside>
           </div>
         </div>
       </section>
 
-      <!-- EXPERIENCE SECTION -->
-      <section id="experience" class="section reveal">
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section">
         <div class="container">
-          <h2 class="section-title">Experience<span class="text-accent">.</span></h2>
-          
-          <div class="timeline">
-            <!-- <div class="timeline-item glass-card hover-glow">
-              <div class="timeline-date">March 2026 – Present</div>
-              <h3 class="timeline-role">Research Intern</h3>
-              <h4 class="timeline-company">Forest Ecology Lab - SRM University</h4>
-              <p class="timeline-desc">Conducting data cleaning, preprocessing, and analysis of large environmental datasets. Performed statistical and correlation analyses of vegetation indices (NDVI/EVI) and ecological variables to derive insights into forest dynamics, productivity, and conservation.</p>
-            </div> -->
+          <header class="section-head reveal">
+            <span class="section-index">02 — Experience</span>
+            <h2 class="section-title">Where I've worked<span class="accent">.</span></h2>
+          </header>
 
-            <div class="timeline-item glass-card hover-glow">
-              <div class="timeline-date">May 2026 – Present</div>
-              <h3 class="timeline-role">Technical Team Lead</h3>
-              <h4 class="timeline-company">Microsoft Student Community - SRM</h4>
-              <p class="timeline-desc">Working on website management, content updates, and improving the digital presence of the community through collaborative technical projects and event support.</p>
-            </div>
-            
-            <div class="timeline-item glass-card hover-glow">
-              <div class="timeline-date">April 2026 – August 2026</div>
-              <h3 class="timeline-role">Member</h3>
-              <h4 class="timeline-company">Singularity Student Lab</h4>
-              <p class="timeline-desc">Collaborating on cutting-edge projects at the intersection of AI and emerging technologies, building innovative solutions.</p>
-            </div>
-          </div>
+          <ol class="exp-list">
+            <!-- <li class="exp-item reveal">
+              <div class="exp-meta">
+                <span class="exp-date">March 2026 – Present</span>
+              </div>
+              <div class="exp-body">
+                <h3 class="exp-role">Research Intern</h3>
+                <p class="exp-company">Forest Ecology Lab — SRM University</p>
+                <p class="exp-desc">Conducting data cleaning, preprocessing, and analysis of large environmental datasets. Performed statistical and correlation analyses of vegetation indices (NDVI/EVI) and ecological variables to derive insights into forest dynamics, productivity, and conservation.</p>
+              </div>
+            </li> -->
+
+            <li class="exp-item reveal">
+              <div class="exp-meta">
+                <span class="exp-date">May 2026 – Present</span>
+              </div>
+              <div class="exp-body">
+                <h3 class="exp-role">Technical Team Lead</h3>
+                <p class="exp-company">Microsoft Student Community — SRM</p>
+                <p class="exp-desc">
+                  Working on website management, content updates, and improving the
+                  digital presence of the community through collaborative technical
+                  projects and event support.
+                </p>
+              </div>
+            </li>
+
+            <li class="exp-item reveal">
+              <div class="exp-meta">
+                <span class="exp-date">April 2026 – August 2026</span>
+              </div>
+              <div class="exp-body">
+                <h3 class="exp-role">Member</h3>
+                <p class="exp-company">Singularity Student Lab</p>
+                <p class="exp-desc">
+                  Collaborating on cutting-edge projects at the intersection of AI and
+                  emerging technologies, building innovative solutions.
+                </p>
+              </div>
+            </li>
+          </ol>
         </div>
       </section>
 
-      <!-- PROJECTS SECTION -->
-      <section id="projects" class="section reveal">
+      <!-- PROJECTS -->
+      <section id="projects" class="section section--band">
         <div class="container">
-          <h2 class="section-title">Selected Work<span class="text-accent">.</span></h2>
-          
+          <header class="section-head reveal">
+            <span class="section-index">03 — Work</span>
+            <h2 class="section-title">Selected work<span class="accent">.</span></h2>
+          </header>
+
           <div class="projects-grid">
-            <div class="project-card glass-card hover-lift">
-              <div class="project-header">
-                <span class="project-category">Data Analysis</span>
-                <a href="https://github.com/Pragnesh-10/analyzing_student_performance" target="_blank" rel="noopener noreferrer" aria-label="Student Performance Analyzer GitHub repository" class="project-link-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            <article class="project-card reveal">
+              <div class="project-top">
+                <span class="project-index">01</span>
+                <a
+                  href="https://github.com/Pragnesh-10/analyzing_student_performance"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Student Performance Analyzer GitHub repository"
+                  class="project-link"
+                >
+                  <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 17 17 7" />
+                    <path d="M8 7h9v9" />
+                  </svg>
                 </a>
               </div>
+              <span class="project-category">Data Analysis</span>
               <h3 class="project-title">Student Performance Analyzer</h3>
-              <p class="project-description">A comprehensive data analysis tool that examines student performance metrics. Built a full preprocessing pipeline to clean, transform, and validate datasets.</p>
+              <p class="project-description">
+                A comprehensive data analysis tool that examines student performance
+                metrics. Built a full preprocessing pipeline to clean, transform, and
+                validate datasets.
+              </p>
               <div class="tech-stack">
                 <span class="tech-tag">Python</span>
                 <span class="tech-tag">Pandas</span>
                 <span class="tech-tag">Matplotlib</span>
                 <span class="tech-tag">EDA</span>
               </div>
-            </div>
+            </article>
 
-            <div class="project-card glass-card hover-lift">
-              <div class="project-header">
-                <span class="project-category">Web Development</span>
-                <a href="https://skillgps.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="SkillGPS Live Application" class="project-link-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            <article class="project-card reveal">
+              <div class="project-top">
+                <span class="project-index">02</span>
+                <a
+                  href="https://skillgps.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="SkillGPS live application"
+                  class="project-link"
+                >
+                  <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 17 17 7" />
+                    <path d="M8 7h9v9" />
+                  </svg>
                 </a>
               </div>
+              <span class="project-category">Web Development</span>
               <h3 class="project-title">SkillGPS</h3>
-              <p class="project-description">An AI-powered career guidance platform that helps users identify, track, and improve their skills with personalized learning paths based on goals.</p>
+              <p class="project-description">
+                An AI-powered career guidance platform that helps users identify, track,
+                and improve their skills with personalized learning paths based on goals.
+              </p>
               <div class="tech-stack">
                 <span class="tech-tag">React</span>
                 <span class="tech-tag">Node.js</span>
                 <span class="tech-tag">JavaScript</span>
                 <span class="tech-tag">CSS</span>
               </div>
-            </div>
+            </article>
 
-            <div class="project-card glass-card hover-lift">
-              <div class="project-header">
-                <span class="project-category">iOS Development</span>
+            <article class="project-card reveal">
+              <div class="project-top">
+                <span class="project-index">03</span>
               </div>
+              <span class="project-category">iOS Development</span>
               <h3 class="project-title">CampusExplorer</h3>
-              <p class="project-description">A campus-based social navigation app allowing users to connect and track real-time locations, exploring places friends visited with an intuitive UI.</p>
+              <p class="project-description">
+                A campus-based social navigation app allowing users to connect and track
+                real-time locations, exploring places friends visited with an intuitive UI.
+              </p>
               <div class="tech-stack">
                 <span class="tech-tag">Swift</span>
                 <span class="tech-tag">UIKit</span>
                 <span class="tech-tag">Location Services</span>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- SKILLS & CERTS SECTION -->
-      <section id="skills" class="section reveal">
-        <div class="container split-section">
-          <div class="skills-column">
-            <h2 class="section-title">My Toolkit<span class="text-accent">.</span></h2>
-            
-            <div class="skill-group glass-card">
-              <h3 class="skill-title">Data Science & ML</h3>
-              <div class="skill-tags">
-                <span class="skill-pill">Python</span>
-                <span class="skill-pill">NumPy</span>
-                <span class="skill-pill">Pandas</span>
-                <span class="skill-pill">Matplotlib</span>
-                <span class="skill-pill">Seaborn</span>
-                <span class="skill-pill">Swift</span>
-                <span class="skill-pill">SQL</span>
-                <span class="skill-pill">EDA</span>
-              </div>
-            </div>
-
-            <div class="skill-group glass-card">
-              <h3 class="skill-title">Emerging Tech</h3>
-              <div class="skill-tags">
-                <span class="skill-pill">Generative AI</span>
-                <span class="skill-pill">LLMs</span>
-                <span class="skill-pill">Prompt Engineering</span>
-                <span class="skill-pill">Model Context Protocol(MCP)</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="certs-column">
-            <h2 class="section-title">Certifications<span class="text-accent">.</span></h2>
-            <div class="cert-list">
-              <a href="https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_xW4inDfwbzvRc5Qbe_1761645937699_completion_certificate.pdf" target="_blank" rel="noopener noreferrer" class="cert-item glass-card hover-glow">
-                <div class="cert-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                </div>
-                <div class="cert-info">
-                  <h4 class="cert-name">Data Analytics Job Simulation</h4>
-                  <p class="cert-issuer">Deloitte Australia (Forage)</p>
-                </div>
-              </a>
-              <a href="https://learn.microsoft.com/api/credentials/share/en-us/YedruNagaPragnesh-0498/402E42269F4B8FF9?sharingId=F0361709D3C48C73" target="_blank" rel="noopener noreferrer" class="cert-item glass-card hover-glow">
-                <div class="cert-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                </div>
-                <div class="cert-info">
-                  <h4 class="cert-name">Generate reports with AI research agents</h4>
-                  <p class="cert-issuer">Microsoft Applied Skills</p>
-                </div>
-              </a>
-              <a href="https://www.credly.com/badges/e90d27cf-83bd-4690-89be-ab4b0d13dfc7/linked_in_profile" target="_blank" rel="noopener noreferrer" class="cert-item glass-card hover-glow">
-                <div class="cert-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                </div>
-                <div class="cert-info">
-                  <h4 class="cert-name">Getting Started with Generative AI</h4>
-                  <p class="cert-issuer">IBM</p>
-                </div>
-              </a>
-              <a href="https://www.hackerrank.com/certificates/iframe/fb222f0c4c48" target="_blank" rel="noopener noreferrer" class="cert-item glass-card hover-glow">
-                <div class="cert-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                </div>
-                <div class="cert-info">
-                  <h4 class="cert-name">Python Programming Certification</h4>
-                  <p class="cert-issuer">HackerRank</p>
-                </div>
-              </a>
-              <a href="https://www.hackerrank.com/certificates/iframe/55738ae71379" target="_blank" rel="noopener noreferrer" class="cert-item glass-card hover-glow">
-                <div class="cert-icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                </div>
-                <div class="cert-info">
-                  <h4 class="cert-name">SQL (Basics) Certification</h4>
-                  <p class="cert-issuer">HackerRank</p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT SECTION -->
-      <section id="contact" class="section reveal">
+      <!-- SKILLS & CERTIFICATIONS -->
+      <section id="skills" class="section">
         <div class="container">
-          <div class="contact-box glass-card glow-border">
-            <div class="contact-info">
-              <h2 class="contact-title">Let's build something <span class="gradient-text">amazing.</span></h2>
-              <p class="contact-desc">Actively seeking internship opportunities in AI & Machine Learning, Data Science, and Product Management. Open to collaborations.</p>
-              
-              <div class="social-links">
-                <a href="mailto:yedrunagapragnesh@gmail.com" class="social-link glass-btn">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> Email Me
+          <header class="section-head reveal">
+            <span class="section-index">04 — Toolkit</span>
+            <h2 class="section-title">Tools &amp; credentials<span class="accent">.</span></h2>
+          </header>
+
+          <div class="toolkit">
+            <div class="reveal">
+              <div class="skill-group">
+                <h3 class="skill-title">Data Science &amp; ML</h3>
+                <div class="skill-tags">
+                  <span class="skill-pill">Python</span>
+                  <span class="skill-pill">NumPy</span>
+                  <span class="skill-pill">Pandas</span>
+                  <span class="skill-pill">Matplotlib</span>
+                  <span class="skill-pill">Seaborn</span>
+                  <span class="skill-pill">Swift</span>
+                  <span class="skill-pill">SQL</span>
+                  <span class="skill-pill">EDA</span>
+                </div>
+              </div>
+
+              <div class="skill-group">
+                <h3 class="skill-title">Emerging Tech</h3>
+                <div class="skill-tags">
+                  <span class="skill-pill">Generative AI</span>
+                  <span class="skill-pill">LLMs</span>
+                  <span class="skill-pill">Prompt Engineering</span>
+                  <span class="skill-pill">Model Context Protocol (MCP)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal">
+              <h3 class="skill-title">Certifications</h3>
+              <ul class="cert-list">
+                <li>
+                  <a
+                    href="https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_xW4inDfwbzvRc5Qbe_1761645937699_completion_certificate.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="cert-item"
+                  >
+                    <span class="cert-num">01</span>
+                    <span class="cert-info">
+                      <span class="cert-name">Data Analytics Job Simulation</span>
+                      <span class="cert-issuer">Deloitte Australia · Forage</span>
+                    </span>
+                    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 17 17 7" />
+                      <path d="M8 7h9v9" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://learn.microsoft.com/api/credentials/share/en-us/YedruNagaPragnesh-0498/402E42269F4B8FF9?sharingId=F0361709D3C48C73"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="cert-item"
+                  >
+                    <span class="cert-num">02</span>
+                    <span class="cert-info">
+                      <span class="cert-name">Generate reports with AI research agents</span>
+                      <span class="cert-issuer">Microsoft Applied Skills</span>
+                    </span>
+                    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 17 17 7" />
+                      <path d="M8 7h9v9" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.credly.com/badges/e90d27cf-83bd-4690-89be-ab4b0d13dfc7/linked_in_profile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="cert-item"
+                  >
+                    <span class="cert-num">03</span>
+                    <span class="cert-info">
+                      <span class="cert-name">Getting Started with Generative AI</span>
+                      <span class="cert-issuer">IBM</span>
+                    </span>
+                    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 17 17 7" />
+                      <path d="M8 7h9v9" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.hackerrank.com/certificates/iframe/fb222f0c4c48"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="cert-item"
+                  >
+                    <span class="cert-num">04</span>
+                    <span class="cert-info">
+                      <span class="cert-name">Python Programming Certification</span>
+                      <span class="cert-issuer">HackerRank</span>
+                    </span>
+                    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 17 17 7" />
+                      <path d="M8 7h9v9" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.hackerrank.com/certificates/iframe/55738ae71379"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="cert-item"
+                  >
+                    <span class="cert-num">05</span>
+                    <span class="cert-info">
+                      <span class="cert-name">SQL (Basics) Certification</span>
+                      <span class="cert-issuer">HackerRank</span>
+                    </span>
+                    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 17 17 7" />
+                      <path d="M8 7h9v9" />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section contact">
+        <div class="container">
+          <header class="section-head reveal">
+            <span class="section-index">05 — Contact</span>
+            <h2 class="section-title">Let's talk<span class="accent">.</span></h2>
+          </header>
+
+          <div class="contact-grid">
+            <div class="reveal">
+              <h3 class="contact-title">Let's build something <em>remarkable.</em></h3>
+              <p class="contact-desc">
+                Actively seeking internship opportunities in AI &amp; Machine Learning,
+                Data Science, and Product Management. Open to collaborations.
+              </p>
+
+              <div class="contact-links">
+                <a href="mailto:yedrunagapragnesh@gmail.com">
+                  <span class="k">Email</span>
+                  <span class="v">yedrunagapragnesh@gmail.com</span>
+                  <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 17 17 7" />
+                    <path d="M8 7h9v9" />
+                  </svg>
                 </a>
-                <a href="https://www.linkedin.com/in/yedrunagapragnesh/" target="_blank" rel="noopener noreferrer" class="social-link glass-btn">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> LinkedIn
+                <a
+                  href="https://www.linkedin.com/in/yedrunagapragnesh/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span class="k">LinkedIn</span>
+                  <span class="v">/in/yedrunagapragnesh</span>
+                  <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 17 17 7" />
+                    <path d="M8 7h9v9" />
+                  </svg>
                 </a>
-                <a href="https://github.com/Pragnesh-10" target="_blank" rel="noopener noreferrer" class="social-link glass-btn">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg> GitHub
+                <a
+                  href="https://github.com/Pragnesh-10"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span class="k">GitHub</span>
+                  <span class="v">Pragnesh-10</span>
+                  <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 17 17 7" />
+                    <path d="M8 7h9v9" />
+                  </svg>
                 </a>
               </div>
             </div>
-            
-            <form id="contactForm" class="contact-form">
-              <div class="input-group">
-                <input type="text" id="nameInput" name="name" required placeholder="Name" aria-label="Your Name" class="glass-input">
-              </div>
-              <div class="input-group">
-                <input type="email" id="emailInput" name="email" required placeholder="Email Address" aria-label="Your Email Address" class="glass-input">
-              </div>
-              <div class="input-group">
-                <textarea id="messageInput" name="message" required placeholder="Your message..." aria-label="Your Message" class="glass-input" rows="4"></textarea>
-              </div>
-              <button type="submit" id="submitBtn" class="btn btn-primary w-full">Send Message</button>
-              <div id="formStatus" class="form-status"></div>
+
+            <form
+              class="contact-form reveal"
+              action="https://formspree.io/f/mnjoyrpe"
+              method="POST"
+            >
+              <label class="field">
+                <span class="field-label">Name</span>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                  autocomplete="name"
+                  required
+                />
+              </label>
+
+              <label class="field">
+                <span class="field-label">Email</span>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                />
+              </label>
+
+              <label class="field">
+                <span class="field-label">Message</span>
+                <textarea
+                  name="message"
+                  rows="5"
+                  placeholder="Tell me about the role, project, or idea…"
+                  required
+                ></textarea>
+              </label>
+
+              <input type="hidden" name="_subject" value="New message from your portfolio" />
+
+              <button type="submit" class="btn btn-invert btn-block">
+                Send message
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+
+              <p class="form-note">Posts directly to my inbox — no tracking, no spam.</p>
             </form>
           </div>
         </div>
@@ -404,24 +630,11 @@
     </main>
 
     <footer class="footer">
-      <div class="container footer-content">
-        <p class="copyright">© <span id="currentYear"></span> Yedru Naga Pragnesh. Built with precision.</p>
-        <p class="location">Amaravati, India 🇮🇳</p>
+      <div class="container footer-inner">
+        <p>© 2026 Yedru Naga Pragnesh</p>
+        <p>Built with HTML &amp; CSS — <strong>no JavaScript</strong></p>
+        <p>Amaravati, India 🇮🇳</p>
       </div>
     </footer>
-
-    <!-- Success Modal -->
-    <div id="successModal" class="modal-overlay">
-      <div class="modal-content glass-card">
-        <div class="modal-icon">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-        </div>
-        <h3>Message Sent!</h3>
-        <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
-        <button id="closeModalBtn" class="btn btn-primary w-full">Awesome</button>
-      </div>
-    </div>
-
-    <script src="script.js"></script>
   </body>
 </html>
