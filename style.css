@@ -525,6 +525,14 @@ hr {
 /* --------------------------------------------------------------------------
    7. About
    -------------------------------------------------------------------------- */
+.thanks {
+  min-height: calc(100vh - var(--header-h) - 9rem);
+}
+
+.thanks-body {
+  max-width: 54ch;
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);

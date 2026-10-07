@@ -577,9 +577,21 @@
 
             <form
               class="contact-form reveal"
-              action="https://formspree.io/f/mnjoyrpe"
+              action="https://api.web3forms.com/submit"
               method="POST"
             >
+              <input
+                type="hidden"
+                name="access_key"
+                value="e52c14aa-b942-412c-810d-25787d80831e"
+              />
+              <input type="hidden" name="subject" value="New message from your portfolio" />
+              <input
+                type="hidden"
+                name="redirect"
+                value="https://ynpragnesh.pages.dev/thanks.html"
+              />
+
               <label class="field">
                 <span class="field-label">Name</span>
                 <input
@@ -611,8 +623,6 @@
                   required
                 ></textarea>
               </label>
-
-              <input type="hidden" name="_subject" value="New message from your portfolio" />
 
               <button type="submit" class="btn btn-invert btn-block">
                 Send message
