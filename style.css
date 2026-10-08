@@ -533,6 +533,37 @@ hr {
   max-width: 54ch;
 }
 
+.redirect-note {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #8d897f;
+}
+
+.redirect-note strong {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.redirect-note button {
+  margin-left: 0.4rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.redirect-note button:hover {
+  color: #000;
+}
+
+.redirect-note.is-cancelled {
+  color: #8d897f;
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
@@ -759,7 +790,91 @@ hr {
 }
 
 /* --------------------------------------------------------------------------
-   10. Skills & certifications
+   10. Extracurricular activities
+   -------------------------------------------------------------------------- */
+.activity-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+.activity-group-title {
+  font-size: 1.15rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.35rem;
+  border-bottom: 1px solid var(--ink);
+}
+
+.activity-list {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.activity-card {
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease),
+    border-color 0.45s var(--ease);
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--line-2);
+  box-shadow: 0 24px 40px -32px rgba(20, 19, 15, 0.6);
+}
+
+.activity-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--accent-deep);
+  font-variant-numeric: tabular-nums;
+}
+
+.activity-title {
+  margin-top: 0.6rem;
+  font-size: 1.3rem;
+}
+
+.activity-meta {
+  margin-top: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.activity-desc {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.activity-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.1rem;
+}
+
+.activity-tag {
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.3rem 0.65rem;
+}
+
+/* --------------------------------------------------------------------------
+   11. Skills & certifications
    -------------------------------------------------------------------------- */
 .toolkit {
   display: grid;
@@ -868,7 +983,7 @@ hr {
 }
 
 /* --------------------------------------------------------------------------
-   11. Contact (inverted band)
+   12. Contact (inverted band)
    -------------------------------------------------------------------------- */
 .contact {
   background: var(--ink);
@@ -1020,7 +1135,7 @@ hr {
 }
 
 /* --------------------------------------------------------------------------
-   12. Footer
+   13. Footer
    -------------------------------------------------------------------------- */
 .footer {
   padding: 2.5rem 0 3rem;
@@ -1044,14 +1159,14 @@ hr {
 }
 
 /* --------------------------------------------------------------------------
-   13. Mobile section nav
+   14. Mobile section nav
    -------------------------------------------------------------------------- */
 .section-nav {
   display: none;
 }
 
 /* --------------------------------------------------------------------------
-   14. Motion
+   15. Motion
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: no-preference) {
   .fade-up {
@@ -1114,7 +1229,7 @@ hr {
 }
 
 /* --------------------------------------------------------------------------
-   15. Responsive
+   16. Responsive
    -------------------------------------------------------------------------- */
 @media (max-width: 1000px) {
   .about-grid {

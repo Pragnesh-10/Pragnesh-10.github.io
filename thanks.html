@@ -57,6 +57,12 @@
                 Email directly
               </a>
             </div>
+
+            <p class="redirect-note" id="redirect-note">
+              Taking you back to the homepage in
+              <strong id="redirect-count">5</strong>s…
+              <button type="button" id="cancel-redirect">Stay here</button>
+            </p>
           </div>
         </div>
       </section>
@@ -68,5 +74,38 @@
         <p>Amaravati, India 🇮🇳</p>
       </div>
     </footer>
+
+    <script>
+      (function () {
+        var SECONDS = 5;
+        var note = document.getElementById("redirect-note");
+        var count = document.getElementById("redirect-count");
+        var cancel = document.getElementById("cancel-redirect");
+        var remaining = SECONDS;
+        var timer;
+
+        function goHome() {
+          window.location.href = "./";
+        }
+
+        function tick() {
+          remaining -= 1;
+          if (remaining <= 0) {
+            clearInterval(timer);
+            goHome();
+          } else {
+            count.textContent = remaining;
+          }
+        }
+
+        cancel.addEventListener("click", function () {
+          clearInterval(timer);
+          note.classList.add("is-cancelled");
+          note.textContent = "Automatic redirect cancelled.";
+        });
+
+        timer = setInterval(tick, 1000);
+      })();
+    </script>
   </body>
 </html>
